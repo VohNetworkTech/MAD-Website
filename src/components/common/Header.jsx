@@ -18,6 +18,8 @@ const Header = ({ openAuthModal }) => {
       window.location.href = '/gallery-page';
     } else if (page === 'whatsnew') {
       window.location.href = '/what-new';
+    } else if (page === 'contact') {
+      window.location.href = '/contact';
     }
   };
 
@@ -85,7 +87,10 @@ const Header = ({ openAuthModal }) => {
               </div>
             </div>
 
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+           <button onClick={() => navigateTo('contact')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors">
+              <Sparkles className="w-4 h-4" />
+              <span>Contact Us</span>
+            </button>
           </nav>
 
           {/* Auth Buttons */}
@@ -157,7 +162,10 @@ const Header = ({ openAuthModal }) => {
                 </div>
               </div>
 
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+              <button onClick={() => navigateTo('contact')} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+                <Sparkles className="w-4 h-4" />
+                <span>Contact</span>
+              </button>
 
               <div className="flex space-x-3 pt-3 border-t border-gray-200">
                 <button 

@@ -14,7 +14,7 @@ const Footer = () => {
   const policyLinks = [
     { name: "Privacy Policy", path: "/privacy-policy" },
     { name: "Terms & Conditions", path: "/terms-conditions" },
-    { name: "Refund Policy", path: "/refund-policy" }
+    { name: "Refund Policy", path: "/refund-policy" },
   ];
 
   return (

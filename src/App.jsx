@@ -12,6 +12,7 @@ import NewsPage from './pages/NewsPage';
 import PrivacyPolicy from './pages/PrivayPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import TermsConditions from './pages/TermsConditions';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Router>
   );
