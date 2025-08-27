@@ -1,9 +1,7 @@
 import React from 'react';
-import { Target, Users, Lightbulb } from 'lucide-react';
+import { Handshake, Users, Target, Building } from 'lucide-react';
 
-const ProjectsHero = () => {
-  
-
+const CollaborateHero = () => {
   return (
     <section className="relative h-[70vh] min-h-[600px] overflow-hidden bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900">
       {/* Background Pattern */}
@@ -20,38 +18,41 @@ const ProjectsHero = () => {
           {/* Main Title */}
           <div className="mb-12">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Driving Change</span>
-              <br />Through Action
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Collaborations</span>
+              <br />& Partnerships
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto">
-              Empowering persons with disabilities through inclusive education, skill development, employment, and advocacy
+              Working Together for Inclusion
             </p>
           </div>
 
-          {/* Impact Focus Areas */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Partnership Focus Areas */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-              <Target className="w-12 h-12 text-green-400 mx-auto mb-4" />
-              <div className="text-3xl font-bold mb-2">Sustainable</div>
-              <div className="text-blue-200">Real Impact</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-              <Users className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <div className="text-3xl font-bold mb-2">Collaborative</div>
+              <Building className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+              <div className="text-3xl font-bold mb-2">Corporate</div>
               <div className="text-blue-200">Partnerships</div>
             </div>
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-              <Lightbulb className="w-12 h-12 text-orange-400 mx-auto mb-4" />
-              <div className="text-3xl font-bold mb-2">Structured</div>
-              <div className="text-blue-200">Programs</div>
+              <Users className="w-12 h-12 text-green-400 mx-auto mb-4" />
+              <div className="text-3xl font-bold mb-2">NGO</div>
+              <div className="text-blue-200">Alliances</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+              <Target className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
+              <div className="text-3xl font-bold mb-2">Government</div>
+              <div className="text-blue-200">Collaboration</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+              <Handshake className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+              <div className="text-3xl font-bold mb-2">Institution</div>
+              <div className="text-blue-200">Networks</div>
             </div>
           </div>
         </div>
-
-        
       </div>
     </section>
   );
 };
 
-export default ProjectsHero;
+export default CollaborateHero;

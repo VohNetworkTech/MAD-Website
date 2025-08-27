@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
 
-const DonateContact = () => {
+const CollaborateContact = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -146,4 +146,4 @@ const DonateContact = () => {
   );
 };
 
-export default DonateContact;
+export default CollaborateContact;

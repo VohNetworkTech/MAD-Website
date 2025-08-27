@@ -6,7 +6,8 @@ const TermsConditions = () => {
       <h1 className="text-3xl font-bold mb-6 text-blue">
         Terms and Conditions
       </h1>
-
+      <p className="mb-4">
+        Welcome to the official website of MAD Foundation. By accessing or using this site, you agree to the following terms and conditions:</p>
       <ol className="list-decimal pl-6 space-y-4">
         <li>
           <strong>Use of Website:</strong> This website is intended to provide information about MAD Foundation’s initiatives and to enable participation in its activities, services, and programs related to the overall empowerment of persons with disabilities. You agree not to misuse the site, disrupt its operation, or use it for unlawful purposes.

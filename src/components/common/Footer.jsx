@@ -72,8 +72,7 @@ const Footer = () => {
                 })}
               </div>
               <p className="text-gray-400 text-xs mt-3">
-                Stay updated with our latest initiatives
-              </p>
+                Stay updated with our latest initiatives, events, and impact stories              </p>
             </div>
 
             {/* Quick Links */}

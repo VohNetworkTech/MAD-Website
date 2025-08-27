@@ -29,21 +29,22 @@ const AboutHero = () => {
           </div>
 
           {/* Key Stats */}
+          {/* Key Focus Areas */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
               <Heart className="w-12 h-12 text-red-400 mx-auto mb-4" />
-              <div className="text-3xl font-bold mb-2">Founded</div>
-              <div className="text-blue-200">September 2024</div>
+              <div className="text-3xl font-bold mb-2">Empowerment</div>
+              <div className="text-blue-200">Through inclusive education & skill development</div>
             </div>
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
               <Users className="w-12 h-12 text-green-400 mx-auto mb-4" />
-              <div className="text-3xl font-bold mb-2">Pan-India</div>
-              <div className="text-blue-200">Jurisdiction</div>
+              <div className="text-3xl font-bold mb-2">Inclusion</div>
+              <div className="text-blue-200">Building barriers-free society for all</div>
             </div>
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
               <Target className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <div className="text-3xl font-bold mb-2">Delhi</div>
-              <div className="text-blue-200">Based</div>
+              <div className="text-3xl font-bold mb-2">Independence</div>
+              <div className="text-blue-200">Creating pathways to self-reliant lives</div>
             </div>
           </div>
         </div>

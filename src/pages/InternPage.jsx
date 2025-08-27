@@ -29,10 +29,11 @@ const InternPage = () => {
       <Header openAuthModal={openAuthModal} />
       <InternHero />
       <InternContent />
-      <InternForm />
+     
       <WhyIntern />
       <InternAreas />
       <InternRequirements />
+       <InternForm />
       <InternCertificate />
       <InternContact />
       <Footer />

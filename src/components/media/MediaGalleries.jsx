@@ -25,7 +25,7 @@ const MediaGalleries = () => {
                 </p>
 
                 {/* Sample Photo Preview */}
-                <div className="grid grid-cols-3 gap-3 mb-8">
+                {/* <div className="grid grid-cols-3 gap-3 mb-8">
                   <div className="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg border-2 border-purple-200 flex items-center justify-center">
                     <Camera className="w-6 h-6 text-purple-600" />
                   </div>
@@ -35,7 +35,7 @@ const MediaGalleries = () => {
                   <div className="aspect-square bg-gradient-to-br from-indigo-100 to-purple-100 rounded-lg border-2 border-indigo-200 flex items-center justify-center">
                     <Camera className="w-6 h-6 text-indigo-600" />
                   </div>
-                </div>
+                </div> */}
 
                 <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
                   <span>View Photo Gallery</span>
@@ -62,14 +62,14 @@ const MediaGalleries = () => {
                 </p>
 
                 {/* Sample Video Preview */}
-                <div className="grid grid-cols-2 gap-3 mb-8">
+                {/* <div className="grid grid-cols-2 gap-3 mb-8">
                   <div className="aspect-video bg-gradient-to-br from-red-100 to-pink-100 rounded-lg border-2 border-red-200 flex items-center justify-center">
                     <Video className="w-8 h-8 text-red-600" />
                   </div>
                   <div className="aspect-video bg-gradient-to-br from-pink-100 to-purple-100 rounded-lg border-2 border-pink-200 flex items-center justify-center">
                     <Video className="w-8 h-8 text-pink-600" />
                   </div>
-                </div>
+                </div> */}
 
                 <button className="w-full bg-gradient-to-r from-red-600 to-pink-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-red-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
                   <span>View Video Gallery</span>

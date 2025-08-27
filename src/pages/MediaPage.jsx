@@ -5,7 +5,7 @@ import AuthModal from '../components/common/AuthModal';
 import MediaHero from '../components/media/MediaHero';
 import MediaContent from '../components/media/MediaContent';
 import MediaGalleries from '../components/media/MediaGalleries';
-import FeaturedMoments from '../components/media/FeaturedMoments';
+// import FeaturedMoments from '../components/media/FeaturedMoments';
 import MediaUpload from '../components/media/MediaUpload';
 import MediaContact from '../components/media/MediaContact';
 
@@ -28,7 +28,7 @@ const MediaPage = () => {
       <MediaHero />
       <MediaContent />
       <MediaGalleries />
-      <FeaturedMoments />
+      {/* <FeaturedMoments /> */}
       <MediaUpload />
       <MediaContact />
       <Footer />

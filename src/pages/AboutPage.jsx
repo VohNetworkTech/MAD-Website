@@ -8,6 +8,7 @@ import VisionMission from '../components/about/VisionMission';
 import OurApproach from '../components/about/OurApproach';
 import Leadership from '../components/about/Leadership';
 import JoinUs from '../components/about/JoinUs';
+import PartOfChange from '../components/about/PartOfChange';
 
 const AboutPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -30,6 +31,7 @@ const AboutPage = () => {
       <VisionMission />
       <OurApproach />
       <Leadership />
+      <PartOfChange/>
       <JoinUs />
       <Footer />
       

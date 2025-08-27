@@ -1,4 +1,5 @@
 import React from 'react';
+import { Users, Handshake, Heart } from 'lucide-react';
 
 const ContactHero = () => {
   
@@ -27,7 +28,24 @@ const ContactHero = () => {
             </p>
           </div>
 
-         
+          {/* Contact Focus Areas */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+              <Users className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+              <div className="text-3xl font-bold mb-2">Questions</div>
+              <div className="text-blue-200">& Suggestions</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+              <Handshake className="w-12 h-12 text-green-400 mx-auto mb-4" />
+              <div className="text-3xl font-bold mb-2">Partnership</div>
+              <div className="text-blue-200">Opportunities</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+              <Heart className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+              <div className="text-3xl font-bold mb-2">Support</div>
+              <div className="text-blue-200">& Assistance</div>
+            </div>
+          </div>
         </div>
 
         

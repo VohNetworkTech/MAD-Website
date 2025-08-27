@@ -7,6 +7,7 @@ import ProjectsList from '../components/projects/ProjectsList';
 import OurApproach from '../components/projects/OurApproach';
 import JoinProjects from '../components/projects/JoinProjects';
 import Overview from '../components/projects/Overview';
+import MakingDifference from '../components/projects/MakingDifference';
 
 const ProjectsPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -28,6 +29,7 @@ const ProjectsPage = () => {
       <Overview/>
       <ProjectsList />
       <OurApproach />
+      <MakingDifference/>
       <JoinProjects />
       <Footer />
       

@@ -70,7 +70,7 @@ const WhoCanVolunteer = () => {
           <div className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Who Can Volunteer?</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto"></div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -98,7 +98,7 @@ const WhoCanVolunteer = () => {
           <div>
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Why Volunteer with Us?</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto"></div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">

@@ -9,9 +9,9 @@ const HeroImageSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
-          src="https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756129525914%3A0.7765373980699437.png" 
+          src="https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756324414389%3A0.9175976910613985.png" 
           alt="People with disabilities engaging in various activities, showcasing inclusion and empowerment"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>

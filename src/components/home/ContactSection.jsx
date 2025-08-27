@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { Send, Phone, Mail, MapPin, Clock, CheckCircle, Users, Heart } from 'lucide-react';
+import { Send, Phone, Mail, CheckCircle,  Heart } from 'lucide-react';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     mobile: '',
-    subject: '',
     message: '',
-    inquiryType: 'general'
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,7 +28,6 @@ const ContactSection = () => {
           fullName: '', 
           email: '', 
           mobile: '', 
-          subject: '', 
           message: '', 
           inquiryType: 'general' 
         });
@@ -44,19 +41,18 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const inquiryTypes = [
-    { value: 'general', label: 'General Inquiry', icon: Mail },
-    { value: 'volunteer', label: 'Volunteer Opportunity', icon: Users },
-    { value: 'donation', label: 'Donation Information', icon: Heart },
-    { value: 'partnership', label: 'Partnership', icon: CheckCircle }
-  ];
+  // const inquiryTypes = [
+  //   { value: 'general', label: 'General Inquiry', icon: Mail },
+  //   { value: 'volunteer', label: 'Volunteer Opportunity', icon: Users },
+  //   { value: 'donation', label: 'Donation Information', icon: Heart },
+  //   { value: 'partnership', label: 'Partnership', icon: CheckCircle }
+  // ];
 
   const contactInfo = [
     {
       icon: Phone,
       title: 'Call Us',
       content: '+91 9915670267',
-      subtitle: 'Mon - Fri, 9 AM - 6 PM',
       color: 'blue',
       action: 'tel:+919915670267'
     },
@@ -64,24 +60,10 @@ const ContactSection = () => {
       icon: Mail,
       title: 'Email Us',
       content: 'contact@mad-foundation.org',
-      subtitle: 'We reply within 24 hours',
       color: 'green',
       action: 'mailto:contact@mad-foundation.org'
     },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      content: 'Office Address',
-      subtitle: 'Coming Soon',
-      color: 'purple'
-    },
-    {
-      icon: Clock,
-      title: 'Office Hours',
-      content: 'Mon - Sat',
-      subtitle: '9:00 AM - 6:00 PM',
-      color: 'orange'
-    }
+    
   ];
 
   const getColorClasses = (color) => {
@@ -162,7 +144,6 @@ const ContactSection = () => {
                       ) : (
                         <p className="text-gray-900 font-medium">{info.content}</p>
                       )}
-                      <p className="text-sm text-gray-500 mt-1">{info.subtitle}</p>
                     </div>
                   </div>
                 </div>
@@ -190,31 +171,7 @@ const ContactSection = () => {
                 <p className="text-gray-600">Fill out the form below and we'll get back to you as soon as possible.</p>
               </div>
               
-              {/* Inquiry Type Selection */}
-              <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-3">What can we help you with? *</label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {inquiryTypes.map((type) => {
-                    const IconComponent = type.icon;
-                    return (
-                      <button
-                        key={type.value}
-                        type="button"
-                        onClick={() => setFormData(prev => ({ ...prev, inquiryType: type.value }))}
-                        className={`p-3 rounded-xl border-2 transition-all duration-200 flex flex-col items-center space-y-2 ${
-                          formData.inquiryType === type.value
-                            ? 'border-blue-500 bg-blue-50 text-blue-700'
-                            : 'border-gray-200 hover:border-gray-300 text-gray-600'
-                        }`}
-                      >
-                        <IconComponent className="w-5 h-5" />
-                        <span className="text-xs font-medium text-center">{type.label}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
+             
               <div className="space-y-6">
                 {/* Name and Email Row */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -258,18 +215,7 @@ const ContactSection = () => {
                       required
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Subject *</label>
-                    <input
-                      type="text"
-                      name="subject"
-                      placeholder="Brief subject of your message"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                      required
-                    />
-                  </div>
+                  
                 </div>
                 
                 {/* Message */}

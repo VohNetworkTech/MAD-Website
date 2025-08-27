@@ -53,7 +53,7 @@ const WaysToHelp = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Ways to Get Involved</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               There are many meaningful ways to contribute your time, skills, and expertise to support our mission.
             </p>

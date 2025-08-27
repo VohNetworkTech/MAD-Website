@@ -13,6 +13,7 @@ import PrivacyPolicy from './pages/PrivayPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import TermsConditions from './pages/TermsConditions';
 import ContactPage from './pages/ContactPage';
+import CollaboratePage from './pages/CollaboratePage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/collaborate" element={<CollaboratePage />} />
       </Routes>
     </Router>
   );

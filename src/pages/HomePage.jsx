@@ -7,6 +7,7 @@ import HeroImageSection from '../components/home/HeroImageSection';
 import AboutSection from '../components/home/AboutSection';
 import FocusAreas from '../components/home/FocusAreas';
 import ContactSection from '../components/home/ContactSection';
+import JoinMovementSection from '../components/home/JoinMovementSection';
 
 const HomePage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -28,6 +29,7 @@ const HomePage = () => {
       <HeroSection />
       <AboutSection />
       <FocusAreas />
+      <JoinMovementSection/>
       <ContactSection />
       <Footer />
       

@@ -214,7 +214,7 @@ const InternForm = () => {
               {/* Info Note */}
               <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
                 <p className="text-sm text-blue-800 text-center">
-                  <strong>Upon submission,</strong> our team will review your application and get in touch with you to discuss internship opportunities.
+                  <strong>Upon submission,</strong> our team will review your application and get in touch with you.
                 </p>
               </div>
             </div>

@@ -34,7 +34,7 @@ const PrivacyPolicy = () => {
         </li>{" "}
         <li>
           {" "}
-          We encourage you to use strong passwords and keep them confidential when accessing our website.{" "}
+          MAD Foundation reserves the right to update or change this Privacy and Policy at any time; changes take effect once posted on this page.{" "}
         </li>{" "}
       </ul>{" "}
       <p className="mt-6">
