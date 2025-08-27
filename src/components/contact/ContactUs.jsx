@@ -44,8 +44,8 @@ const ContactUs = () => {
           </p>
           <p>
             <strong>Phone:</strong>{" "}
-            <a href="tel:+911234567890" className="text-blue-600 underline">
-              +91 12345 67890
+            <a href="tel:+919915670267" className="text-blue-600 underline">
+               +91 9915670267
             </a>
           </p>
           <p>

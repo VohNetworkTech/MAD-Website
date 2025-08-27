@@ -12,25 +12,25 @@ const WaysToHelp = () => {
     {
       icon: Megaphone,
       title: "Advocacy & Awareness Campaigns",
-      description: "Help spread awareness about accessibility, disability rights, and inclusive policies through community events and outreach programs.",
+      description: "Help spread awareness about accessibility, disability rights, and inclusive policies through community events, outreach programs, and social media engagement.",
       color: "green"
     },
     {
       icon: FileText,
       title: "Content Development & Digital Accessibility",
-      description: "Support the development of accessible study materials, digital resources, and assistive technology guides.",
+      description: "Support the development of accessible study materials, digital resources, and assistive technology guides to improve learning and employment opportunities.",
       color: "purple"
     },
     {
       icon: Calendar,
       title: "Event & Workshop Coordination",
-      description: "Be part of organizing training sessions, networking events, and empowerment workshops.",
+      description: "Be part of organizing training sessions, networking events, and empowerment workshops that bring together individuals, experts, and organizations.",
       color: "orange"
     },
     {
       icon: Search,
       title: "Research & Policy Support",
-      description: "Assist in research, documentation, and policy recommendations that strengthen disability inclusion.",
+      description: "Assist in research, documentation, and policy recommendations that strengthen disability inclusion in education, employment, and accessibility.",
       color: "red"
     }
   ];

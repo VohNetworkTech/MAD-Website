@@ -1,6 +1,5 @@
 // src/components/volunteer/VolunteerContent.jsx
 import React from 'react';
-import { MapPin,  Globe, Users, Target, Heart } from 'lucide-react';
 
 const VolunteerContent = () => {
   return (
@@ -23,27 +22,7 @@ const VolunteerContent = () => {
                 Whether you have time, skills, or expertise to offer, there are many ways to get involved. As a volunteer, you will have the opportunity to support meaningful projects, engage in impactful activities, and help build an inclusive society.
               </p>
 
-              {/* Key Benefits */}
-              <div className="space-y-3">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <Target className="text-white w-3 h-3" />
-                  </div>
-                  <p className="text-gray-700">Support meaningful projects and impactful activities</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <Users className="text-white w-3 h-3" />
-                  </div>
-                  <p className="text-gray-700">Help build an inclusive society for persons with disabilities</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-purple-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <Heart className="text-white w-3 h-3" />
-                  </div>
-                  <p className="text-gray-700">Contribute your time, skills, and expertise flexibly</p>
-                </div>
-              </div>
+            
             </div>
 
             {/* Organization Info */}
@@ -57,40 +36,7 @@ const VolunteerContent = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl"></div>
               </div>
 
-              {/* Organization Details */}
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-200">
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">Our Operations</h3>
-                    <p className="text-gray-700 mb-4 text-sm">
-                      Founded in <span className="font-semibold">September 2024</span>, MAD Foundation is a Delhi-based organization with Pan-India jurisdiction. At present, most of our operations are managed from <span className="font-semibold text-blue-600">Chandigarh, Mohali, and Panchkula</span>, where we are actively working on projects and initiatives.
-                    </p>
-                    
-                    <div className="space-y-3">
-                      <div className="bg-white rounded-lg p-3 border border-blue-100">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <Globe className="w-4 h-4 text-blue-600" />
-                          <span className="text-sm font-semibold text-gray-700">Remote Support:</span>
-                        </div>
-                        <p className="text-sm text-gray-600">
-                          Many activities can be supported remotely, enabling individuals from any part of the country to volunteer with us.
-                        </p>
-                      </div>
-                      
-                      <div className="bg-white rounded-lg p-3 border border-blue-100">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <Users className="w-4 h-4 text-blue-600" />
-                          <span className="text-sm font-semibold text-gray-700">Local Support:</span>
-                        </div>
-                        <p className="text-sm text-gray-600">
-                          For certain physical events and programs, especially those organized in Chandigarh, Mohali and Panchkula, we may require local volunteers for on-ground support.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

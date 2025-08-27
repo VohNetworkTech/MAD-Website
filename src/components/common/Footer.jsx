@@ -46,8 +46,8 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 text-gray-400" />
-                  <a href="mailto:madfoundation704@gmail.com" className="text-gray-300 hover:text-white transition-colors text-sm">
-                    madfoundation704@gmail.com
+                  <a href="mailto:contact@mad-foundation.org" className="text-gray-300 hover:text-white transition-colors text-sm">
+                    contact@mad-foundation.org
                   </a>
                 </div>
               </div>
@@ -97,7 +97,8 @@ const Footer = () => {
           {/* Footer Bottom */}
           <div className="border-t border-gray-800 pt-6 text-center">
             <p className="text-gray-400 text-sm">
-              © 2025 My Action for the Disabled Foundation. All rights reserved.
+              Copyright © 2025 MAD Foundation. All rights reserved.
+              By using this website, you agree to our Privacy and Policy and Terms and Conditions.
             </p>
           </div>
         </div>

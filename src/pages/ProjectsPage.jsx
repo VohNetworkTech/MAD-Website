@@ -6,6 +6,7 @@ import ProjectsHero from '../components/projects/ProjectsHero';
 import ProjectsList from '../components/projects/ProjectsList';
 import OurApproach from '../components/projects/OurApproach';
 import JoinProjects from '../components/projects/JoinProjects';
+import Overview from '../components/projects/Overview';
 
 const ProjectsPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -24,6 +25,7 @@ const ProjectsPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <Header openAuthModal={openAuthModal} />
       <ProjectsHero />
+      <Overview/>
       <ProjectsList />
       <OurApproach />
       <JoinProjects />

@@ -63,10 +63,10 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'madfoundation704@gmail.com',
+      content: 'contact@mad-foundation.org',
       subtitle: 'We reply within 24 hours',
       color: 'green',
-      action: 'mailto:madfoundation704@gmail.com'
+      action: 'mailto:contact@mad-foundation.org'
     },
     {
       icon: MapPin,

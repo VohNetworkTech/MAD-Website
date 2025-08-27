@@ -12,13 +12,13 @@ const WhoCanVolunteer = () => {
     {
       icon: Users,
       title: "Educators & Trainers",
-      description: "Share your expertise in teaching and mentorship",
+      description: " Share your expertise in teaching, mentorship, and skill-building",
       color: "green"
     },
     {
       icon: Monitor,
       title: "Tech & Accessibility Enthusiasts",
-      description: "Support assistive technology initiatives",
+      description: "Support initiatives related to assistive technology and digital inclusion",
       color: "purple"
     },
     {
@@ -42,8 +42,8 @@ const WhoCanVolunteer = () => {
     },
     {
       icon: Globe,
-      title: "Be Part of a Community",
-      description: "Connect with passionate individuals and experts"
+      title: " Be Part of a Like-Minded Community",
+      description: "Connect with passionate individuals and experts in the field  of disability inclusion"
     },
     {
       icon: Clock,
@@ -106,8 +106,8 @@ const WhoCanVolunteer = () => {
                 const IconComponent = reason.icon;
                 
                 return (
-                  <div key={index} className="flex items-start space-x-4 p-6 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl border border-blue-200">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div key={index} className="flex items-start space-x-4 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-200">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <div>

@@ -3,6 +3,8 @@ import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import AuthModal from "../components/common/AuthModal";
 import ContactUs from "../components/contact/ContactUs";
+import ContactHero from "../components/contact/ContactHero";
+import ContactOverview from "../components/contact/ContactOverview";
 
 const ContactPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -24,6 +26,8 @@ const ContactPage = () => {
 
       {/* Contact Us Content */}
       <div className="py-12 px-6 md:px-12 lg:px-24">
+        <ContactHero/>
+        <ContactOverview/>
         <ContactUs />
       </div>
 

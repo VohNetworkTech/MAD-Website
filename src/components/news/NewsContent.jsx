@@ -1,5 +1,4 @@
 import React from 'react';
-import { Bell, Users, Target, Calendar } from 'lucide-react';
 
 const NewsContent = () => {
   return (
@@ -18,37 +17,8 @@ const NewsContent = () => {
                 At My Action for the Disabled Foundation (MAD Foundation), we are constantly working on new initiatives, organizing events, and expanding our impact. Stay informed about our latest programs, success stories, upcoming events, and important announcements.
               </p>
               
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Our updates keep you connected with the progress we're making in disability empowerment, accessibility initiatives, and inclusion advocacy. Be the first to know about new opportunities, community events, and inspiring achievements.
-              </p>
+             
 
-              {/* Key Update Areas */}
-              <div className="space-y-3">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <Bell className="text-white w-3 h-3" />
-                  </div>
-                  <p className="text-gray-700">Latest program launches and initiative updates</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <Calendar className="text-white w-3 h-3" />
-                  </div>
-                  <p className="text-gray-700">Upcoming events and workshop announcements</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <Users className="text-white w-3 h-3" />
-                  </div>
-                  <p className="text-gray-700">Success stories and community achievements</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <Target className="text-white w-3 h-3" />
-                  </div>
-                  <p className="text-gray-700">Important policy changes and advocacy milestones</p>
-                </div>
-              </div>
 
               <button
                 onClick={() => {
@@ -78,32 +48,6 @@ const NewsContent = () => {
                 </div>
               </div>
 
-              {/* Update Type Cards */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200">
-                  <Bell className="w-8 h-8 text-blue-600 mb-3" />
-                  <h4 className="font-bold text-gray-900 mb-2">Announcements</h4>
-                  <p className="text-sm text-gray-600">Important updates and news releases</p>
-                </div>
-
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200">
-                  <Calendar className="w-8 h-8 text-blue-600 mb-3" />
-                  <h4 className="font-bold text-gray-900 mb-2">Events</h4>
-                  <p className="text-sm text-gray-600">Upcoming workshops and gatherings</p>
-                </div>
-
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200">
-                  <Users className="w-8 h-8 text-blue-600 mb-3" />
-                  <h4 className="font-bold text-gray-900 mb-2">Success Stories</h4>
-                  <p className="text-sm text-gray-600">Inspiring achievements and milestones</p>
-                </div>
-
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200">
-                  <Target className="w-8 h-8 text-blue-600 mb-3" />
-                  <h4 className="font-bold text-gray-900 mb-2">Impact Updates</h4>
-                  <p className="text-sm text-gray-600">Progress reports and outcomes</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

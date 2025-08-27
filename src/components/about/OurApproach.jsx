@@ -7,25 +7,25 @@ const OurApproach = () => {
     {
       icon: BookOpen,
       title: "Education & Skill Development",
-      description: "Equipping individuals with knowledge and practical skills for personal and professional growth.",
+      description: "Equipping individuals with knowledge and practical skills.",
       color: "blue"
     },
     {
       icon: Briefcase,
       title: "Employment & Livelihood", 
-      description: "Connecting talent with meaningful career opportunities and sustainable income sources.",
+      description: "Connecting talent with meaningful career opportunities.",
       color: "green"
     },
     {
       icon: Accessibility,
       title: "Accessibility & Assistive Technology",
-      description: "Ensuring environments and tools are inclusive and barrier-free for everyone.",
+      description: "Ensuring environments and tools are inclusive.",
       color: "purple"
     },
     {
       icon: Megaphone,
       title: "Advocacy & Awareness",
-      description: "Driving policy-level and community-based changes for systemic inclusion.",
+      description: "Driving policy-level and community-based changes.",
       color: "orange"
     }
   ];

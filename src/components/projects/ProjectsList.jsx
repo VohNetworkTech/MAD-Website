@@ -8,7 +8,7 @@ const ProjectsList = () => {
       icon: BookOpen,
       title: "Competitive Examination Preparation",
       subtitle: "Empowering through knowledge and opportunity",
-      description: "Training and educating persons with disabilities for competitive examinations such as IAS, PCS, Judiciary, Banking, and other higher education entrance tests.",
+      description: "We aim to train and educate persons with disabilities for competitive examinations such as IAS, PCS, Judiciary, Banking, and other higher education entrance tests.",
       features: [
         "Development of accessible study materials (Braille, audiobooks, digital formats)",
         "Engagement of subject experts and retired civil servants as mentors",
@@ -22,11 +22,11 @@ const ProjectsList = () => {
       icon: Monitor,
       title: "Technology Training Programs",
       subtitle: "Bridging the digital divide",
-      description: "Equipping persons with disabilities with digital skills essential for education, employment, and social participation.",
+      description: "We aspire to equip persons with disabilities with digital skills essential for education, employment, and social participation.",
       features: [
         "Basic computer literacy and internet usage training",
-        "Familiarization with assistive technologies and screen readers",
-        "Skill development in data entry, content creation, and freelancing",
+        "Familiarization with assistive technologies such as screen readers, magnification tools, and voice recognition software",
+        "Skill development in areas like data entry, content creation, graphic design, and freelancing",
         "Awareness on safe online practices and accessing government e-services"
       ],
       color: "purple"
@@ -36,7 +36,7 @@ const ProjectsList = () => {
       icon: Briefcase,
       title: "Employment and Livelihood Support",
       subtitle: "Creating pathways to self-reliance",
-      description: "Supporting persons with disabilities in accessing meaningful employment and entrepreneurship opportunities.",
+      description: "We aim to support persons with disabilities in accessing meaningful employment and entrepreneurship opportunities.",
       features: [
         "Job readiness programs including resume writing and interview preparation",
         "Partnerships with employers to encourage inclusive hiring",
@@ -50,7 +50,7 @@ const ProjectsList = () => {
       icon: Wrench,
       title: "Assistive Technology Access",
       subtitle: "Tools for independence",
-      description: "Promoting awareness and access to assistive technologies that enhance independence.",
+      description: "We intend to promote awareness and access to assistive technologies that enhance independence.",
       features: [
         "Organization of awareness camps on available assistive devices",
         "Guidance for securing aids and appliances through government schemes",
@@ -63,7 +63,7 @@ const ProjectsList = () => {
       icon: Heart,
       title: "Health and Wellness Initiatives",
       subtitle: "A holistic approach to well-being",
-      description: "Integrating health and wellness into empowerment initiatives.",
+      description: "We aspire to integrate health and wellness into empowerment initiatives.",
       features: [
         "Awareness sessions on preventive healthcare, nutrition, and mental health",
         "Introduction to adaptive fitness programs and sports activities",
@@ -76,7 +76,7 @@ const ProjectsList = () => {
       icon: Users,
       title: "Empowerment of Women with Disabilities",
       subtitle: "Breaking barriers, building futures",
-      description: "Addressing the unique challenges faced by women with disabilities through targeted programs.",
+      description: "We aim to address the unique challenges faced by women with disabilities through targeted programs.",
       features: [
         "Skill development tailored for women's entrepreneurial opportunities",
         "Awareness sessions on rights, legal protections, and personal safety",
@@ -89,10 +89,10 @@ const ProjectsList = () => {
       icon: Trophy,
       title: "Sports and Cultural Activities",
       subtitle: "Celebrating talent and breaking stereotypes",
-      description: "Promoting inclusion and self-expression through sports and cultural engagement.",
+      description: "We aspire to promote inclusion and self-expression through sports and cultural engagement.",
       features: [
         "Training opportunities for para-sports",
-        "Organization of inclusive cultural festivals showcasing talents",
+        "Organization of inclusive cultural festivals showcasing talents in music, dance, and arts",
         "Collaboration with cultural organizations to promote accessibility"
       ],
       color: "yellow"
@@ -102,7 +102,7 @@ const ProjectsList = () => {
       icon: Megaphone,
       title: "Awareness and Sensitization",
       subtitle: "Building an inclusive mindset",
-      description: "Raising awareness and encouraging a more inclusive society.",
+      description: "We intend to raise awareness and encourage a more inclusive society.",
       features: [
         "Sensitization workshops for schools, colleges, and workplaces",
         "Public campaigns to promote accessibility and inclusion",

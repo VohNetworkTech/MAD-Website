@@ -9,25 +9,25 @@ const TermsConditions = () => {
 
       <ol className="list-decimal pl-6 space-y-4">
         <li>
-          <strong>Use of Website:</strong> Intended to provide information and enable participation. Do not misuse or use unlawfully.
+          <strong>Use of Website:</strong> This website is intended to provide information about MAD Foundation’s initiatives and to enable participation in its activities, services, and programs related to the overall empowerment of persons with disabilities. You agree not to misuse the site, disrupt its operation, or use it for unlawful purposes.
         </li>
         <li>
-          <strong>Content Ownership:</strong> All materials belong to MAD Foundation unless stated. Share only for personal, non-commercial use with acknowledgment.
+          <strong>Content Ownership:</strong> All text, images, logos, and materials on this website belong to MAD Foundation unless otherwise stated. You may view and share content for personal, non-commercial use with proper acknowledgment. Reproduction or modification without prior permission is not allowed.
         </li>
         <li>
-          <strong>Information Accuracy:</strong> We strive for accuracy, but content may change without notice.
+          <strong>Information Accuracy:</strong> We strive to provide accurate and updated information. However, MAD Foundation does not guarantee completeness or absolute accuracy, and the content may change without prior notice.
         </li>
         <li>
-          <strong>Privacy:</strong> Any information shared will be handled per our Privacy Policy.
+          <strong>Privacy:</strong> Any personal information you share with us will be handled as per our Privacy and Policy. We take reasonable steps to protect your data.
         </li>
         <li>
-          <strong>Third-Party Links:</strong> We are not responsible for content or practices of external websites.
+          <strong>Third-Party Links:</strong> Our site may contain links to external websites. MAD Foundation is not responsible for the content, policies, or practices of third-party sites.
         </li>
         <li>
-          <strong>Limitation of Liability:</strong> MAD Foundation will not be liable for losses or damages from use of this website.
+          <strong>Limitation of Liability:</strong>While we take care to maintain secure and accessible services, MAD Foundation will not be liable for any loss, damage, or inconvenience caused by the use of this website or reliance on its content.
         </li>
         <li>
-          <strong>Changes to Terms:</strong> Updates may occur anytime. Continued use = acceptance.
+          <strong>Changes to Terms:</strong> We may update these Terms and Conditions at any time. Continued use of the website after changes means you accept the updated terms.
         </li>
         <li>
           <strong>Contact:</strong> For queries, email{" "}

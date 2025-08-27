@@ -14,11 +14,11 @@ const InternForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const internshipAreas = [
-    'Research & Policy Analysis',
-    'Content Development & Digital Accessibility',
-    'Event & Workshop Coordination',
-    'Social Media & Awareness Campaigns',
-    'Assistive Technology & Digital Inclusion'
+    'Research & Policy',
+    'Content Development',
+    'Event Coordination',
+    'Social Media',
+    'Assistive Technology etc.'
   ];
 
   const handleSubmit = (e) => {

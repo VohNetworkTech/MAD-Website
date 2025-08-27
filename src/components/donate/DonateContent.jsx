@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Heart, Lightbulb, Users, Shield } from 'lucide-react';
+import { CheckCircle, Heart, } from 'lucide-react';
 
 const DonateContent = () => {
   return (
@@ -76,32 +76,7 @@ const DonateContent = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl"></div>
               </div>
 
-              {/* Impact Cards */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200">
-                  <Lightbulb className="w-8 h-8 text-blue-600 mb-3" />
-                  <h4 className="font-bold text-gray-900 mb-2">Education</h4>
-                  <p className="text-sm text-gray-600">Accessible learning materials and inclusive education programs</p>
-                </div>
-
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border border-green-200">
-                  <Users className="w-8 h-8 text-green-600 mb-3" />
-                  <h4 className="font-bold text-gray-900 mb-2">Employment</h4>
-                  <p className="text-sm text-gray-600">Skill development and job placement assistance</p>
-                </div>
-
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-200">
-                  <Shield className="w-8 h-8 text-purple-600 mb-3" />
-                  <h4 className="font-bold text-gray-900 mb-2">Advocacy</h4>
-                  <p className="text-sm text-gray-600">Rights protection and policy advocacy initiatives</p>
-                </div>
-
-                <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl p-4 border border-orange-200">
-                  <Heart className="w-8 h-8 text-orange-600 mb-3" />
-                  <h4 className="font-bold text-gray-900 mb-2">Support</h4>
-                  <p className="text-sm text-gray-600">Assistive technology and accessibility solutions</p>
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>

@@ -16,10 +16,10 @@ const RefundPolicy = () => {
 
       <h2 className="text-xl font-semibold mb-3">Policy Guidelines:</h2>
       <ul className="list-disc pl-6 space-y-2">
-        <li>No Refunds: Once a donation is made, it cannot be refunded, cancelled, or transferred.</li>
-        <li>Accuracy: Donors must carefully review details before making payments.</li>
+        <li>No Refunds: Once a donation or contribution has been made, it cannot be refunded, cancelled, or transferred.</li>
+        <li>No Refunds: Once a donation or contribution has been made, it cannot be refunded, cancelled, or transferred.</li>
         <li>
-          Updates: Policy may change anytime, effective once published on this page.
+          Updates: MAD Foundation reserves the right to modify this Refund and Cancellation Policy at any time, and the updated policy will be effective once published on this page.
         </li>
       </ul>
 

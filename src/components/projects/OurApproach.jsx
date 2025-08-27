@@ -79,8 +79,7 @@ const OurApproach = () => {
           <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200 text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Building for the Future</h3>
             <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed mb-6">
-              As a young organization, we are in the process of building networks, mobilizing resources, and setting up the necessary infrastructure to bring these initiatives to life. We welcome collaboration with individuals, institutions, corporates, and government agencies who share our vision.
-            </p>
+As a young organization, we are in the process of building networks, mobilizing resources, and setting up the necessary infrastructure to bring them to life. We welcome collaboration with individuals, institutions, corporates, and government agencies who share our vision. Together, we can ensure that persons with disabilities are not just included, but fully empowered to participate in every sphere of life.            </p>
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
               <p className="text-blue-800 font-semibold">
                 Together, we can ensure that persons with disabilities are not just included, but fully empowered to participate in every sphere of life.

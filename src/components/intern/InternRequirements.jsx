@@ -6,7 +6,7 @@ const InternRequirements = () => {
     {
       icon: Users,
       title: "Open to All",
-      description: "Students, graduates, and professionals from all fields are welcome to apply"
+      description: "Open to students, graduates, and professionals from all fields."
     },
     {
       icon: Clock,

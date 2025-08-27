@@ -28,8 +28,8 @@ const Leadership = () => {
     {
       name: "Shubham Kumar",
       position: "Joint Secretary",
-      description: "A committed banking professional and disability rights advocate. Currently serving as an Assistant Manager at Union Bank of India, he brings both administrative experience and grassroots insight to the MAD Foundation.",
-      additionalInfo: "In addition to his work with MAD Foundation, Shubham serves as the Chandigarh State Coordinator for the All India Chess Federation for the Blind (AICFB), promoting accessible sports and intellectual development for persons with visual impairments.",
+      description: "A committed banking professional and disability rights advocate. Currently serving as an Assistant Manager at Union Bank of India, he brings both administrative experience and grassroots insight to the MAD Foundation.As the Joint Secretary of MAD Foundation, he plays a key role in shaping and supporting the organization’s inclusive initiatives",
+      additionalInfo: "In addition to his work with MAD Foundation, Shubham serves as the Chandigarh State Coordinator for the All India Chess Federation for the Blind (AICFB), promoting accessible sports and intellectual development for persons with visual impairments.His multifaceted involvement reflects a strong commitment to empowerment, accessibility, and community engagement.",
       icon: User,
       color: "green"
     }
@@ -130,47 +130,7 @@ const Leadership = () => {
             })}
           </div>
 
-          {/* Team Values */}
-          <div className="mt-16 bg-white rounded-3xl p-8 shadow-xl border border-gray-200">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Leadership Values</h3>
-              <p className="text-gray-600">The principles that guide our leadership team</p>
-            </div>
-            
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="text-center p-4">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-blue-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Compassion</h4>
-                <p className="text-sm text-gray-600">Leading with empathy and understanding</p>
-              </div>
-              
-              <div className="text-center p-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-green-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Excellence</h4>
-                <p className="text-sm text-gray-600">Striving for the highest standards</p>
-              </div>
-              
-              <div className="text-center p-4">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-purple-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Collaboration</h4>
-                <p className="text-sm text-gray-600">Working together for greater impact</p>
-              </div>
-              
-              <div className="text-center p-4">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <User className="w-8 h-8 text-orange-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Integrity</h4>
-                <p className="text-sm text-gray-600">Transparency in all our actions</p>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>

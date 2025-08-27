@@ -1,6 +1,6 @@
 // src/components/about/JoinUs.jsx
 import React, { useState } from 'react';
-import { Heart, Users, BookOpen, Send, CheckCircle, Phone, Mail } from 'lucide-react';
+import { Heart, Users, BookOpen, Send, CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 
 const JoinUs = () => {
   const [formData, setFormData] = useState({
@@ -94,22 +94,30 @@ const JoinUs = () => {
 
               {/* Contact Info */}
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                <h4 className="text-white font-semibold mb-4">Get in Touch</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-4 h-4 text-blue-300" />
-                    <a href="tel:+919915670267" className="text-blue-100 hover:text-white transition-colors text-sm">
-                      +91 9915670267
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-4 h-4 text-blue-300" />
-                    <a href="mailto:madfoundation704@gmail.com" className="text-blue-100 hover:text-white transition-colors text-sm">
-                      madfoundation704@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
+  <h4 className="text-white font-semibold mb-4">Get in Touch</h4>
+  <div className="space-y-3">
+    <div className="flex items-center space-x-3">
+      <Phone className="w-4 h-4 text-blue-300" />
+      <a href="tel:+919915670267" className="text-blue-100 hover:text-white transition-colors text-sm">
+        +91 9915670267
+      </a>
+    </div>
+    <div className="flex items-center space-x-3">
+      <Mail className="w-4 h-4 text-blue-300" />
+      <a href="mailto:madfoundation704@gmail.com" className="text-blue-100 hover:text-white transition-colors text-sm">
+        contact@mad-foundation.org
+      </a>
+    </div>
+    <div className="flex items-start space-x-3">
+      <MapPin className="w-4 h-4 text-blue-300 mt-0.5" />
+      <div className="text-blue-100 text-sm">
+        <div>J-54, First floor</div>
+        <div>Vikas Puri, Delhi West</div>
+        <div>Delhi-110018, India</div>
+      </div>
+    </div>
+  </div>
+</div>
             </div>
 
             {/* Right Side - Contact Form */}
