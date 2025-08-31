@@ -5,10 +5,10 @@ import { Link } from "react-router-dom"; // ✅ For navigation
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Facebook, name: "Facebook", href: "#facebook", color: "text-blue-400 hover:text-blue-300" },
-    { icon: Instagram, name: "Instagram", href: "#instagram", color: "text-pink-400 hover:text-pink-300" },
-    { icon: Youtube, name: "YouTube", href: "#youtube", color: "text-red-400 hover:text-red-300" },
-    { icon: Linkedin, name: "LinkedIn", href: "#linkedin", color: "text-blue-500 hover:text-blue-400" }
+    { icon: Facebook, name: "Facebook", href: "https://www.facebook.com/profile.php?id=61568907583148", color: "text-blue-400 hover:text-blue-300" },
+    { icon: Instagram, name: "Instagram", href: "https://www.instagram.com/madfoundation85", color: "text-pink-400 hover:text-pink-300" },
+    { icon: Youtube, name: "YouTube", href: "https://www.youtube.com/channel/UCCfkHNrVJVYxdpkM4TPTfjg", color: "text-red-400 hover:text-red-300" },
+    { icon: Linkedin, name: "LinkedIn", href: "https://www.linkedin.com/company/madfoundationorg/", color: "text-blue-500 hover:text-blue-400" }
   ];
 
   const policyLinks = [
@@ -30,7 +30,7 @@ const Footer = () => {
                 <h3 className="text-xl font-bold">MAD Foundation</h3>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Empowering lives, creating opportunities for persons with disabilities through inclusive education, employment, and advocacy.
+                Empowering lives, creating opportunities for persons with disabilities through education, employment, skill-development and livelihood.
               </p>
             </div>
 

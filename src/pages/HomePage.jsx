@@ -8,6 +8,7 @@ import AboutSection from '../components/home/AboutSection';
 import FocusAreas from '../components/home/FocusAreas';
 import ContactSection from '../components/home/ContactSection';
 import JoinMovementSection from '../components/home/JoinMovementSection';
+import SubscribeSection from '../components/common/SubscribeSection';
 
 const HomePage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -31,6 +32,7 @@ const HomePage = () => {
       <FocusAreas />
       <JoinMovementSection/>
       <ContactSection />
+      <SubscribeSection/>
       <Footer />
       
       <AuthModal 

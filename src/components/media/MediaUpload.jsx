@@ -1,67 +1,110 @@
 import React, { useState } from 'react';
-import { Upload, CheckCircle, User, Mail, FileImage, MessageSquare } from 'lucide-react';
+import { Send, CheckCircle, User, Mail, Link, MessageSquare, AlertCircle } from 'lucide-react';
+import mediaService from '../../services/mediaService';
+import { validateMediaForm } from '../../utils/mediaValidation';
+
+// Input field component outside main component to prevent cursor issues
+const InputField = ({ icon: Icon, type, name, placeholder, value, onChange, error, label, rows }) => {
+  const Component = rows ? 'textarea' : 'input';
+  
+  return (
+    <div>
+      <label className="block text-sm font-semibold text-gray-700 mb-2">
+        {Icon && <Icon className="w-4 h-4 inline mr-2" />}
+        {label}
+      </label>
+      <Component
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        rows={rows}
+        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all ${
+          rows ? 'resize-none' : ''
+        } ${
+          error ? 'border-red-500' : 'border-gray-300'
+        }`}
+        required
+      />
+      {error && (
+        <p className="mt-1 text-sm text-red-600 flex items-center">
+          <AlertCircle className="w-4 h-4 mr-1" />
+          {error}
+        </p>
+      )}
+    </div>
+  );
+};
 
 const MediaUpload = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
-    mediaFile: null,
+    mediaUrl: '',
     description: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [dragActive, setDragActive] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [apiError, setApiError] = useState('');
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [ setSubmissionReference] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setApiError('');
+
+    // Client-side validation
+    const validation = validateMediaForm(formData);
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+
+    setErrors({});
     setIsSubmitting(true);
     
-    setTimeout(() => {
-      console.log('Media upload submitted:', formData);
-      setIsSubmitted(true);
-      setIsSubmitting(false);
+    try {
+      const response = await mediaService.submitMediaUpload(formData);
       
-      setTimeout(() => {
-        setFormData({
-          fullName: '',
-          email: '',
-          mediaFile: null,
-          description: ''
-        });
-        setIsSubmitted(false);
-      }, 4000);
-    }, 1500);
+      if (response.success) {
+        setIsSubmitted(true);
+        setSubmitMessage(response.message);
+        setSubmissionReference(response.data.submissionReference);
+        
+        // Reset form after showing success message
+        setTimeout(() => {
+          setFormData({
+            fullName: '',
+            email: '',
+            mediaUrl: '',
+            description: ''
+          });
+          setIsSubmitted(false);
+          setSubmitMessage('');
+          setSubmissionReference('');
+        }, 5000);
+      }
+    } catch (error) {
+      setApiError(error.message || 'Failed to submit media. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setFormData(prev => ({ ...prev, mediaFile: file }));
-    }
-  };
-
-  const handleDrag = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (e.type === "dragenter" || e.type === "dragover") {
-      setDragActive(true);
-    } else if (e.type === "dragleave") {
-      setDragActive(false);
-    }
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragActive(false);
     
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      setFormData(prev => ({ ...prev, mediaFile: e.dataTransfer.files[0] }));
+    // Clear specific error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+    
+    // Clear API error when user makes changes
+    if (apiError) {
+      setApiError('');
     }
   };
 
@@ -76,11 +119,14 @@ const MediaUpload = () => {
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Media Submitted!</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Thank you for sharing your experience with MAD Foundation. Your submission has been received successfully.
+                {submitMessage || "Thank you for sharing your experience with MAD Foundation. Your media submission has been received successfully."}
               </p>
+              
+             
+              
               <div className="bg-purple-50 rounded-xl p-4 border border-purple-200">
                 <p className="text-purple-800 text-sm">
-                  <strong>What's Next:</strong> Your submissions may be featured on our website and social media after review by our team.
+                  <strong>What's Next:</strong> Your submissions may be featured on our website and social media after review by our team. You'll receive email updates about your submission status.
                 </p>
               </div>
             </div>
@@ -105,114 +151,79 @@ const MediaUpload = () => {
 
           {/* Form */}
           <div className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-200">
-            <div className="space-y-6">
-              {/* Personal Information */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    <User className="w-4 h-4 inline mr-2" />
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Enter your full name"
-                    value={formData.fullName}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    <Mail className="w-4 h-4 inline mr-2" />
-                    Email ID *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email address"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* File Upload */}
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  <FileImage className="w-4 h-4 inline mr-2" />
-                  Upload Media File *
-                </label>
-                <div
-                  className={`w-full p-8 border-2 border-dashed rounded-xl transition-all ${
-                    dragActive 
-                      ? 'border-purple-500 bg-purple-50' 
-                      : 'border-gray-300 hover:border-purple-400 hover:bg-gray-50'
-                  }`}
-                  onDragEnter={handleDrag}
-                  onDragLeave={handleDrag}
-                  onDragOver={handleDrag}
-                  onDrop={handleDrop}
-                >
-                  <div className="text-center">
-                    <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-lg font-medium text-gray-700 mb-2">
-                      {formData.mediaFile ? formData.mediaFile.name : 'Drop your files here, or click to browse'}
-                    </p>
-                    <p className="text-sm text-gray-500 mb-4">
-                      Support for images (JPG, PNG, GIF) and videos (MP4, MOV, AVI)
-                    </p>
-                    <input
-                      type="file"
-                      id="file-upload"
-                      onChange={handleFileChange}
-                      accept="image/*,video/*"
-                      className="hidden"
-                      required
-                    />
-                    <label
-                      htmlFor="file-upload"
-                      className="cursor-pointer bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors inline-block"
-                    >
-                      Choose File
-                    </label>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* API Error Display */}
+              {apiError && (
+                <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <AlertCircle className="w-5 h-5 text-red-500 mr-2" />
+                    <p className="text-sm text-red-700">{apiError}</p>
                   </div>
                 </div>
+              )}
+
+              {/* Personal Information */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <InputField
+                  icon={User}
+                  type="text"
+                  name="fullName"
+                  placeholder="Enter your full name"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  error={errors.fullName}
+                  label="Full Name *"
+                />
+                <InputField
+                  icon={Mail}
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  error={errors.email}
+                  label="Email ID *"
+                />
               </div>
 
+              {/* Media URL */}
+              <InputField
+                icon={Link}
+                type="url"
+                name="mediaUrl"
+                placeholder="https://example.com/your-photo-or-video.jpg"
+                value={formData.mediaUrl}
+                onChange={handleInputChange}
+                error={errors.mediaUrl}
+                label="Media URL (Photo/Video Link) *"
+              />
+
               {/* Description */}
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  <MessageSquare className="w-4 h-4 inline mr-2" />
-                  Description (Optional)
-                </label>
-                <textarea
-                  name="description"
-                  placeholder="Tell us about this photo/video, the event, or your experience..."
-                  rows="4"
-                  value={formData.description}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all resize-none"
-                ></textarea>
-              </div>
+              <InputField
+                icon={MessageSquare}
+                name="description"
+                placeholder="Tell us about this photo/video, the event, or your experience..."
+                rows={4}
+                value={formData.description}
+                onChange={handleInputChange}
+                error={errors.description}
+                label="Description"
+              />
 
               {/* Submit Button */}
               <button
-                onClick={handleSubmit}
+                type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-8 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-[1.02] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-3"
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-8 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-[1.02] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-3"
               >
                 {isSubmitting ? (
                   <>
                     <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
-                    <span>Uploading...</span>
+                    <span>Submitting...</span>
                   </>
                 ) : (
                   <>
-                    <Upload className="w-6 h-6" />
+                    <Send className="w-6 h-6" />
                     <span>Submit</span>
                   </>
                 )}
@@ -221,10 +232,10 @@ const MediaUpload = () => {
               {/* Info Note */}
               <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
                 <p className="text-sm text-blue-800 text-center">
-                  <strong>Your submissions may be featured</strong> on our website and social media!
+                  <strong>Submit your media URL above.</strong> We review all submissions and feature relevant content that aligns with our mission. You'll receive email confirmation and status updates.
                 </p>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

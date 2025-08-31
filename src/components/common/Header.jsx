@@ -1,9 +1,12 @@
 // src/components/common/Header.jsx
 import React, { useState } from 'react';
-import { Menu, X,  User, UserPlus, Users, Briefcase, Heart, Image, Sparkles, Phone, Handshake, Home, Info, Target } from 'lucide-react';
+import { Menu, X, User, UserPlus, Users, Briefcase, Heart, Image, Sparkles, Phone, Handshake, Home, Info, Target, LogOut, Settings, ChevronDown } from 'lucide-react';
+import { useAuth } from '../../hooks/useAuth';
 
 const Header = ({ openAuthModal }) => {
+  const { user, logout, isAuthenticated } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   const navigateTo = (page) => {
     if (page === 'home') {
@@ -33,178 +36,305 @@ const Header = ({ openAuthModal }) => {
     }
   };
 
+  const handleLogout = () => {
+    logout();
+    setIsUserMenuOpen(false);
+    setIsMenuOpen(false);
+  };
+
+  // Get user's first name or username
+  const getUserDisplayName = () => {
+    if (!user) return '';
+    return user.name ? user.name.split(' ')[0] : 'User';
+  };
+
+  // User dropdown menu component
+  const UserDropdown = ({ isMobile = false }) => (
+    <div className={`${isMobile ? 'relative' : 'absolute right-0 mt-2'} w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50`}>
+      <div className="px-4 py-3 border-b border-gray-100">
+        <p className="text-sm text-gray-500 truncate">{user?.email}</p>
+      </div>
+      <div className="py-1">
+        <button
+          onClick={handleLogout}
+          className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center space-x-2"
+        >
+          <LogOut className="w-4 h-4" />
+          <span>Sign Out</span>
+        </button>
+      </div>
+    </div>
+  );
+
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 lg:py-6">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigateTo('home')}>
-            <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-white shadow-lg border border-gray-100">
+          {/* Logo - Responsive sizing */}
+          <div className="flex items-center space-x-2 sm:space-x-3 cursor-pointer" onClick={() => navigateTo('home')}>
+            <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden flex items-center justify-center bg-white shadow-lg border border-gray-100">
               <img 
-                src="https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756323728209%3A0.6944437775580377.jpg" 
+                src="https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756595178282%3A0.9684351400001376.png" 
                 alt="MAD Foundation Logo" 
-                className="w-14 h-14 object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
-           
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <button onClick={() => navigateTo('home')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors">
-              <Home className="w-4 h-4" />
+          {/* Desktop Navigation - Hidden on smaller screens due to many items */}
+          <nav className="hidden xl:flex items-center space-x-4 2xl:space-x-6">
+            <button onClick={() => navigateTo('home')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base">
+              <Home className="w-3 h-3 2xl:w-4 2xl:h-4" />
               <span>Home</span>
             </button>
-            <button onClick={() => navigateTo('about')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors">
-              <Info className="w-4 h-4" />
+            <button onClick={() => navigateTo('about')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base">
+              <Info className="w-3 h-3 2xl:w-4 2xl:h-4" />
               <span>About</span>
             </button>
-            <button onClick={() => navigateTo('projects')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors">
-              <Target className="w-4 h-4" />
+            <button onClick={() => navigateTo('projects')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base">
+              <Target className="w-3 h-3 2xl:w-4 2xl:h-4" />
               <span>Projects</span>
             </button>
-            <button onClick={() => navigateTo('donate')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors">
-              <Heart className="w-4 h-4" />
+            <button onClick={() => navigateTo('donate')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base">
+              <Heart className="w-3 h-3 2xl:w-4 2xl:h-4" />
               <span>Donate</span>
             </button>
-            <button onClick={() => navigateTo('gallery')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors">
-              <Image className="w-4 h-4" />
+            <button onClick={() => navigateTo('gallery')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base">
+              <Image className="w-3 h-3 2xl:w-4 2xl:h-4" />
               <span>Gallery</span>
             </button>
-            <button onClick={() => navigateTo('whatsnew')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors">
-              <Sparkles className="w-4 h-4" />
-              <span>What's New</span>
+            <button onClick={() => navigateTo('whatsnew')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base">
+              <Sparkles className="w-3 h-3 2xl:w-4 2xl:h-4" />
+              <span>News</span>
             </button>
 
             {/* Separate Volunteer and Intern buttons */}
             <button
               onClick={() => handleJoinUsClick('volunteer')}
-              className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors"
+              className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base"
             >
-              <Users className="w-4 h-4" />
+              <Users className="w-3 h-3 2xl:w-4 2xl:h-4" />
               <span>Volunteer</span>
             </button>
             <button
               onClick={() => handleJoinUsClick('intern')}
-              className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors"
+              className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base"
             >
-              <Briefcase className="w-4 h-4" />
+              <Briefcase className="w-3 h-3 2xl:w-4 2xl:h-4" />
               <span>Intern</span>
             </button>
 
-            <button onClick={() => navigateTo('collaborate')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors">
-              <Handshake className="w-4 h-4" />
+            <button onClick={() => navigateTo('collaborate')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base">
+              <Handshake className="w-3 h-3 2xl:w-4 2xl:h-4" />
               <span>Collaborate</span>
             </button>
 
-            <button onClick={() => navigateTo('contact')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors">
-              <Phone className="w-4 h-4" />
-              <span>Contact Us</span>
+            <button onClick={() => navigateTo('contact')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base">
+              <Phone className="w-3 h-3 2xl:w-4 2xl:h-4" />
+              <span>Contact</span>
             </button>
           </nav>
 
-          {/* Auth Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            <button 
-              onClick={() => openAuthModal('signin')}
-              className="flex items-center space-x-2 px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
-            >
-              <User className="w-4 h-4" />
-              <span>Sign In</span>
+          {/* Desktop Navigation for Large screens (but not XL) - Simplified */}
+          <nav className="hidden lg:flex xl:hidden items-center space-x-3">
+            <button onClick={() => navigateTo('home')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm">
+              <Home className="w-4 h-4" />
+              <span>Home</span>
             </button>
-            <button 
-              onClick={() => openAuthModal('register')}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              <UserPlus className="w-4 h-4" />
-              <span>Register</span>
+            <button onClick={() => navigateTo('about')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm">
+              <Info className="w-4 h-4" />
+              <span>About</span>
             </button>
+            <button onClick={() => navigateTo('projects')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm">
+              <Target className="w-4 h-4" />
+              <span>Projects</span>
+            </button>
+            <button onClick={() => navigateTo('donate')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm">
+              <Heart className="w-4 h-4" />
+              <span>Donate</span>
+            </button>
+            <button onClick={() => navigateTo('contact')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm">
+              <Phone className="w-4 h-4" />
+              <span>Contact</span>
+            </button>
+          </nav>
+
+          {/* Auth Section - Desktop */}
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
+            {isAuthenticated ? (
+              /* Logged In User Menu */
+              <div className="relative">
+                <button
+                  onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                  className="flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 lg:px-4 py-2 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm"
+                >
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-medium">
+                    {getUserDisplayName().charAt(0).toUpperCase()}
+                  </div>
+                  <span className="hidden sm:block max-w-16 lg:max-w-24 truncate text-sm">{getUserDisplayName()}</span>
+                  <ChevronDown className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform ${isUserMenuOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isUserMenuOpen && <UserDropdown />}
+              </div>
+            ) : (
+              /* Not Logged In - Show Auth Buttons */
+              <>
+                <button 
+                  onClick={() => openAuthModal('signin')}
+                  className="flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 lg:px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors text-sm"
+                >
+                  <User className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span className="hidden sm:block">Sign In</span>
+                </button>
+                <button 
+                  onClick={() => openAuthModal('register')}
+                  className="flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 lg:px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                >
+                  <UserPlus className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span className="hidden sm:block">Register</span>
+                </button>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
           <button 
-            className="md:hidden"
+            className="lg:xl:hidden p-1"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 p-4 bg-gray-50 rounded-lg">
-            <nav className="flex flex-col space-y-3">
-              <button onClick={() => navigateTo('home')} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+          <div className="lg:xl:hidden mt-3 sm:mt-4 p-3 sm:p-4 bg-gray-50 rounded-lg">
+            <nav className="flex flex-col space-y-2 sm:space-y-3">
+              <button onClick={() => { navigateTo('home'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
                 <Home className="w-4 h-4" />
                 <span>Home</span>
               </button>
-              <button onClick={() => navigateTo('about')} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => { navigateTo('about'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
                 <Info className="w-4 h-4" />
                 <span>About</span>
               </button>
-              <button onClick={() => navigateTo('projects')} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => { navigateTo('projects'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
                 <Target className="w-4 h-4" />
                 <span>Projects</span>
               </button>
-              <button onClick={() => navigateTo('donate')} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => { navigateTo('donate'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
                 <Heart className="w-4 h-4" />
                 <span>Donate</span>
               </button>
-              <button onClick={() => navigateTo('gallery')} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => { navigateTo('gallery'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
                 <Image className="w-4 h-4" />
                 <span>Gallery</span>
               </button>
-              <button onClick={() => navigateTo('whatsnew')} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => { navigateTo('whatsnew'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
                 <Sparkles className="w-4 h-4" />
                 <span>What's New</span>
               </button>
 
               {/* Separate Mobile Volunteer and Intern */}
               <button
-                onClick={() => handleJoinUsClick('volunteer')}
-                className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors"
+                onClick={() => { handleJoinUsClick('volunteer'); setIsMenuOpen(false); }}
+                className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base"
               >
                 <Users className="w-4 h-4" />
                 <span>Volunteer</span>
               </button>
               <button
-                onClick={() => handleJoinUsClick('intern')}
-                className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors"
+                onClick={() => { handleJoinUsClick('intern'); setIsMenuOpen(false); }}
+                className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base"
               >
                 <Briefcase className="w-4 h-4" />
                 <span>Intern</span>
               </button>
 
-              <button onClick={() => navigateTo('collaborate')} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => { navigateTo('collaborate'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
                 <Handshake className="w-4 h-4" />
                 <span>Collaborate</span>
               </button>
 
-              <button onClick={() => navigateTo('contact')} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => { navigateTo('contact'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
                 <Phone className="w-4 h-4" />
                 <span>Contact</span>
               </button>
 
-              <div className="flex space-x-3 pt-3 border-t border-gray-200">
-                <button 
-                  onClick={() => openAuthModal('signin')}
-                  className="flex items-center space-x-2 px-4 py-2 text-blue-600 border border-blue-600 rounded-lg"
-                >
-                  <User className="w-4 h-4" />
-                  <span>Sign In</span>
-                </button>
-                <button 
-                  onClick={() => openAuthModal('register')}
-                  className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg"
-                >
-                  <UserPlus className="w-4 h-4" />
-                  <span>Register</span>
-                </button>
+              {/* Mobile Auth Section */}
+              <div className="pt-2 sm:pt-3 border-t border-gray-200">
+                {isAuthenticated ? (
+                  /* Mobile - Logged In User */
+                  <div className="space-y-2 sm:space-y-3">
+                    <div className="flex items-center space-x-3 px-2 py-2 bg-white rounded-lg">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium">
+                        {getUserDisplayName().charAt(0).toUpperCase()}
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-gray-900">{user?.name || 'User'}</p>
+                        <p className="text-xs text-gray-500 truncate">{user?.email}</p>
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        console.log('Navigate to profile');
+                      }}
+                      className="w-full flex items-center space-x-2 px-3 sm:px-4 py-2 text-gray-700 bg-white rounded-lg hover:bg-gray-50 text-sm"
+                    >
+                      <Settings className="w-4 h-4" />
+                      <span>Profile Settings</span>
+                    </button>
+                    
+                    <button
+                      onClick={handleLogout}
+                      className="w-full flex items-center space-x-2 px-3 sm:px-4 py-2 text-red-600 bg-white rounded-lg hover:bg-red-50 text-sm"
+                    >
+                      <LogOut className="w-4 h-4" />
+                      <span>Sign Out</span>
+                    </button>
+                  </div>
+                ) : (
+                  /* Mobile - Not Logged In */
+                  <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+                    <button 
+                      onClick={() => {
+                        openAuthModal('signin');
+                        setIsMenuOpen(false);
+                      }}
+                      className="flex items-center justify-center space-x-2 px-4 py-2 text-blue-600 border border-blue-600 rounded-lg text-sm"
+                    >
+                      <User className="w-4 h-4" />
+                      <span>Sign In</span>
+                    </button>
+                    <button 
+                      onClick={() => {
+                        openAuthModal('register');
+                        setIsMenuOpen(false);
+                      }}
+                      className="flex items-center justify-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm"
+                    >
+                      <UserPlus className="w-4 h-4" />
+                      <span>Register</span>
+                    </button>
+                  </div>
+                )}
               </div>
             </nav>
           </div>
         )}
       </div>
+      
+      {/* Click outside to close user menu */}
+      {isUserMenuOpen && (
+        <div 
+          className="fixed inset-0 z-40" 
+          onClick={() => setIsUserMenuOpen(false)}
+        />
+      )}
     </header>
   );
 };

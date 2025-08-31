@@ -9,7 +9,7 @@ const HeroImageSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
-          src="https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756324414389%3A0.9175976910613985.png" 
+          src="https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756593470091%3A0.33898842339057.png" 
           alt="People with disabilities engaging in various activities, showcasing inclusion and empowerment"
           className="w-full h-full object-contain"
         />
@@ -24,7 +24,7 @@ const HeroImageSection = () => {
           <div className="mb-8">
             <div className="text-6xl md:text-8xl text-white/20 font-serif leading-none mb-4">"</div>
             <blockquote className="text-xl md:text-3xl font-light leading-relaxed mb-4">
-              Together, we're building a world where every person has the opportunity to thrive, regardless of their abilities.
+              Let us work together towards building a world where every person has the opportunity to thrive, regardless of their abilities.
             </blockquote>
             <div className="text-6xl md:text-8xl text-white/20 font-serif leading-none rotate-180">"</div>
           </div>

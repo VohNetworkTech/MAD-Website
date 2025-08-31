@@ -26,7 +26,7 @@ const MediaContent = () => {
             <div className="space-y-6">
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" 
+                  src="https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756594516748%3A0.3202124103576207.png" 
                   alt="MAD Foundation community event showcasing inclusive activities"
                   className="w-full h-64 object-cover rounded-2xl shadow-lg"
                 />

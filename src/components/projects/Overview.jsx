@@ -15,7 +15,7 @@ const Overview = () => {
             {/* Text Content */}
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                <span className="font-semibold text-blue-600">MAD Foundation</span>  is committed to empowering persons with disabilities through inclusive education, skill development, employment, livelihood, assistive technology, healthcare, accessibility, and advocacy. Through our initiatives we aspire to create real, sustainable impact, ensuring that individuals have the resources, training, and opportunities to lead independent and dignified lives.
+                <span className="font-semibold text-blue-600">MAD Foundation</span>  is committed to empowering persons with disabilities through education, skill development, employment, livelihood, assistive technology, healthcare, accessibility, and advocacy. Through our initiatives we aspire to create real, sustainable impact, ensuring that individuals have the resources, training, and opportunities to lead independent and dignified lives.
               </p>
               
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -31,7 +31,7 @@ We aim to develop and implement these initiatives in collaboration with individu
             <div className="space-y-8">
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80" 
+                  src="https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756593996507%3A0.4679869635056475.png" 
                   alt="MAD Foundation team working with persons with disabilities"
                   className="w-full h-80 object-cover rounded-2xl shadow-2xl"
                 />

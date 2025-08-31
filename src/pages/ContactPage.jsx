@@ -5,6 +5,7 @@ import AuthModal from "../components/common/AuthModal";
 import ContactUs from "../components/contact/ContactUs";
 import ContactHero from "../components/contact/ContactHero";
 import ContactOverview from "../components/contact/ContactOverview";
+import SubscribeSection from "../components/common/SubscribeSection";
 
 const ContactPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -29,6 +30,7 @@ const ContactPage = () => {
         <ContactHero/>
         <ContactOverview/>
         <ContactUs />
+        <SubscribeSection/>
       </div>
 
       {/* Footer */}

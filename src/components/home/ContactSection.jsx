@@ -1,5 +1,37 @@
 import React, { useState } from 'react';
-import { Send, Phone, Mail, CheckCircle,  Heart } from 'lucide-react';
+import { Send, Phone, Mail, CheckCircle, Heart, AlertCircle } from 'lucide-react';
+import contactService from '../../services/contactService';
+import { validateContactForm } from '../../utils/contactValidation';
+
+// Move StyledInputField outside the main component to prevent recreation on every render
+const StyledInputField = ({ type, name, placeholder, value, onChange, error, rows, label }) => {
+  const Component = rows ? 'textarea' : 'input';
+  return (
+    <div>
+      <label className="block text-sm font-semibold text-gray-700 mb-2">{label}</label>
+      <Component
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        rows={rows}
+        className={`w-full px-4 py-4 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white ${
+          rows ? 'resize-none' : ''
+        } ${
+          error ? 'border-red-500' : 'border-gray-300'
+        }`}
+        required
+      />
+      {error && (
+        <p className="mt-1 text-sm text-red-600 flex items-center">
+          <AlertCircle className="w-4 h-4 mr-1" />
+          {error}
+        </p>
+      )}
+    </div>
+  );
+};
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -11,42 +43,64 @@ const ContactSection = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [apiError, setApiError] = useState('');
+  const [submitMessage, setSubmitMessage] = useState('');
 
-  const handleContactSubmit = (e) => {
+  const handleContactSubmit = async (e) => {
     e.preventDefault();
+    setApiError('');
+
+    // Client-side validation
+    const validation = validateContactForm(formData);
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+
+    setErrors({});
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Contact form submitted:', formData);
-      setIsSubmitted(true);
-      setIsSubmitting(false);
+    try {
+      const response = await contactService.submitContactForm(formData);
       
-      // Reset form after showing success
-      setTimeout(() => {
-        setFormData({ 
-          fullName: '', 
-          email: '', 
-          mobile: '', 
-          message: '', 
-          inquiryType: 'general' 
-        });
-        setIsSubmitted(false);
-      }, 3000);
-    }, 1500);
+      if (response.success) {
+        setIsSubmitted(true);
+        setSubmitMessage(response.message);
+        
+        // Reset form after showing success message
+        setTimeout(() => {
+          setFormData({ 
+            fullName: '', 
+            email: '', 
+            mobile: '', 
+            message: '' 
+          });
+          setIsSubmitted(false);
+          setSubmitMessage('');
+        }, 5000);
+      }
+    } catch (error) {
+      setApiError(error.message || 'Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Clear specific error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+    
+    // Clear API error when user makes changes
+    if (apiError) {
+      setApiError('');
+    }
   };
-
-  // const inquiryTypes = [
-  //   { value: 'general', label: 'General Inquiry', icon: Mail },
-  //   { value: 'volunteer', label: 'Volunteer Opportunity', icon: Users },
-  //   { value: 'donation', label: 'Donation Information', icon: Heart },
-  //   { value: 'partnership', label: 'Partnership', icon: CheckCircle }
-  // ];
 
   const contactInfo = [
     {
@@ -63,7 +117,6 @@ const ContactSection = () => {
       color: 'green',
       action: 'mailto:contact@mad-foundation.org'
     },
-    
   ];
 
   const getColorClasses = (color) => {
@@ -86,9 +139,14 @@ const ContactSection = () => {
                 <CheckCircle className="w-10 h-10 text-green-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Your message has been sent successfully. We'll get back to you within 24 hours.
+              <p className="text-lg text-gray-600 mb-4">
+                {submitMessage || "Your message has been sent successfully. We'll get back to you within 24 hours."}
               </p>
+              <div className="bg-green-50 rounded-lg p-4 mb-6">
+                <p className="text-sm text-green-700">
+                  Our team will respond within 24-48 hours. Check your email for a confirmation message.
+                </p>
+              </div>
               <div className="flex items-center justify-center space-x-2 text-green-600">
                 <div className="w-2 h-2 bg-green-600 rounded-full animate-bounce"></div>
                 <div className="w-2 h-2 bg-green-600 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
@@ -171,72 +229,69 @@ const ContactSection = () => {
                 <p className="text-gray-600">Fill out the form below and we'll get back to you as soon as possible.</p>
               </div>
               
-             
-              <div className="space-y-6">
+              <form onSubmit={handleContactSubmit} className="space-y-6">
+                {/* API Error Display */}
+                {apiError && (
+                  <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                    <div className="flex items-center">
+                      <AlertCircle className="w-5 h-5 text-red-500 mr-2" />
+                      <p className="text-sm text-red-700">{apiError}</p>
+                    </div>
+                  </div>
+                )}
+
                 {/* Name and Email Row */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
-                    <input
-                      type="text"
-                      name="fullName"
-                      placeholder="Enter your full name"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Enter your email address"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                      required
-                    />
-                  </div>
+                  <StyledInputField
+                    type="text"
+                    name="fullName"
+                    placeholder="Enter your full name"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
+                    error={errors.fullName}
+                    label="Full Name *"
+                  />
+                  <StyledInputField
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    error={errors.email}
+                    label="Email Address *"
+                  />
                 </div>
 
-                {/* Phone and Subject Row */}
+                {/* Phone Number */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
-                    <input
-                      type="tel"
-                      name="mobile"
-                      placeholder="Enter your phone number"
-                      value={formData.mobile}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                      required
-                    />
-                  </div>
-                  
+                  <StyledInputField
+                    type="tel"
+                    name="mobile"
+                    placeholder="Enter your phone number"
+                    value={formData.mobile}
+                    onChange={handleInputChange}
+                    error={errors.mobile}
+                    label="Phone Number *"
+                  />
+                  <div></div> {/* Empty div to maintain grid layout */}
                 </div>
                 
                 {/* Message */}
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Your Message *</label>
-                  <textarea
-                    name="message"
-                    placeholder="Tell us more about how we can help you or how you'd like to get involved..."
-                    rows="6"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none bg-gray-50 focus:bg-white"
-                    required
-                  ></textarea>
-                </div>
+                <StyledInputField
+                  name="message"
+                  placeholder="Tell us more about how we can help you or how you'd like to get involved..."
+                  rows={6}
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  error={errors.message}
+                  label="Your Message *"
+                />
                 
                 {/* Submit Button */}
                 <button
-                  onClick={handleContactSubmit}
+                  type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-8 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-[1.02] shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-3"
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-8 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-[1.02] shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-3"
                 >
                   {isSubmitting ? (
                     <>
@@ -257,7 +312,7 @@ const ContactSection = () => {
                     <span className="font-semibold">Privacy Protected:</span> Your information is secure and will only be used to respond to your inquiry.
                   </p>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

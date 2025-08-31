@@ -9,7 +9,8 @@ import WhyIntern from '../components/intern/WhyIntern';
 import InternAreas from '../components/intern/InternAreas';
 import InternRequirements from '../components/intern/InternRequirements';
 import InternCertificate from '../components/intern/InternCertificate';
-import InternContact from '../components/intern/InternContact';
+import GetInTouch from '../components/common/GetInTouch';
+import SubscribeSection from '../components/common/SubscribeSection';
 
 const InternPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -35,7 +36,8 @@ const InternPage = () => {
       <InternRequirements />
        <InternForm />
       <InternCertificate />
-      <InternContact />
+      <GetInTouch/>
+      <SubscribeSection/>
       <Footer />
       
       <AuthModal 

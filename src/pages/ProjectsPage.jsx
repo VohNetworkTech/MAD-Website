@@ -5,9 +5,10 @@ import AuthModal from '../components/common/AuthModal';
 import ProjectsHero from '../components/projects/ProjectsHero';
 import ProjectsList from '../components/projects/ProjectsList';
 import OurApproach from '../components/projects/OurApproach';
-import JoinProjects from '../components/projects/JoinProjects';
 import Overview from '../components/projects/Overview';
 import MakingDifference from '../components/projects/MakingDifference';
+import GetInTouch from '../components/common/GetInTouch';
+import SubscribeSection from '../components/common/SubscribeSection';
 
 const ProjectsPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -30,7 +31,8 @@ const ProjectsPage = () => {
       <ProjectsList />
       <OurApproach />
       <MakingDifference/>
-      <JoinProjects />
+      <GetInTouch/>
+      <SubscribeSection/>
       <Footer />
       
       <AuthModal 

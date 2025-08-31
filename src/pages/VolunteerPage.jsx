@@ -8,8 +8,8 @@ import VolunteerForm from '../components/volunteer/VolunteerForm';
 import WaysToHelp from '../components/volunteer/WaysToHelp';
 import WhoCanVolunteer from '../components/volunteer/WhoCanVolunteer';
 import Recognition from '../components/volunteer/Recognition';
-import VolunteerContact from '../components/volunteer/VolunteerContact';
-
+import GetInTouch from '../components/common/GetInTouch';
+import SubscribeSection from '../components/common/SubscribeSection';
 const VolunteerPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState('signin');
@@ -32,7 +32,8 @@ const VolunteerPage = () => {
       <WaysToHelp />
       <WhoCanVolunteer />
       <Recognition />
-      <VolunteerContact />
+      <GetInTouch/>
+      <SubscribeSection/>
       <Footer />
       
       <AuthModal 

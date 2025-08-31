@@ -15,7 +15,7 @@ const WhoWeAre = () => {
             {/* Text Content */}
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                <span className="font-semibold text-blue-600">MAD Foundation</span> (My Action for the Disabled Foundation) s a non-profit organization committed to the empowerment of persons with disabilities by fostering inclusive education, skill development, employment, livelihood, assistive technology, healthcare, accessibility, and advocacy.
+                <span className="font-semibold text-blue-600">MAD Foundation</span> (My Action for the Disabled Foundation) is a non-profit organization committed to the empowerment of persons with disabilities by fostering education, skill development, employment, livelihood, assistive technology, healthcare, accessibility, and advocacy.
               </p>
               
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -31,7 +31,7 @@ Through structured programs and initiatives, MAD Foundation creates pathways for
             <div className="space-y-8">
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80" 
+                  src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                   alt="MAD Foundation team working with persons with disabilities"
                   className="w-full h-80 object-cover rounded-2xl shadow-2xl"
                 />

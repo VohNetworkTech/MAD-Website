@@ -6,7 +6,8 @@ import NewsHero from '../components/news/NewsHero';
 import NewsContent from '../components/news/NewsContent';
 
 import NewsSubmit from '../components/news/NewsSubmit';
-import NewsContact from '../components/news/NewsContact';
+import GetInTouch from '../components/common/GetInTouch';
+import SubscribeSection from '../components/common/SubscribeSection';
 
 const NewsPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -29,7 +30,8 @@ const NewsPage = () => {
       {/* <LatestAnnouncements /> */}
       {/* <UpcomingEvents /> */}
       <NewsSubmit />
-      <NewsContact />
+      <GetInTouch/>
+      <SubscribeSection/>
       <Footer />
       
       <AuthModal 

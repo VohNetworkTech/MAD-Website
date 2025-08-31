@@ -14,7 +14,7 @@ const InternContent = () => {
             {/* Text Content */}
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                Are you looking for an opportunity to gain hands-on experience, contribute to a meaningful cause, and develop new skills? My Action for the Disabled Foundation (MAD Foundation) offers internship opportunities for students and professionals who want to support inclusive education, skill development, employment, assistive technology, and advocacy for persons with disabilities.
+                Are you looking for an opportunity to gain hands-on experience, contribute to a meaningful cause, and develop new skills? My Action for the Disabled Foundation (MAD Foundation) offers internship opportunities for students and professionals who want to support education, skill development, employment, assistive technology, and advocacy for persons with disabilities.
               </p>
               
               <p className="text-lg text-gray-700 leading-relaxed">

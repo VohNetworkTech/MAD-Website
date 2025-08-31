@@ -6,7 +6,8 @@ import DonateHero from '../components/donate/DonateHero';
 import DonateContent from '../components/donate/DonateContent';
 import DonateWays from '../components/donate/DonateWays';
 import DonateForm from '../components/donate/DonateForm';
-import DonateContact from '../components/donate/DonateContact';
+import GetInTouch from '../components/common/GetInTouch';
+import SubscribeSection from '../components/common/SubscribeSection';
 
 const DonatePage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -28,7 +29,8 @@ const DonatePage = () => {
       <DonateContent />
       <DonateWays />
       <DonateForm />
-      <DonateContact />
+      <GetInTouch/>
+      <SubscribeSection/>
       <Footer />
       
       <AuthModal 

@@ -57,7 +57,7 @@ const JoinUs = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Join Our Mission</h2>
             <p className="text-blue-100 text-lg max-w-2xl mx-auto">
-              Together, we can create meaningful change for persons with disabilities.
+              Together, we can bring about meaningful change for persons with disabilities.
             </p>
           </div>
 

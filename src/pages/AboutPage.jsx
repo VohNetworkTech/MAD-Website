@@ -9,6 +9,7 @@ import OurApproach from '../components/about/OurApproach';
 import Leadership from '../components/about/Leadership';
 import JoinUs from '../components/about/JoinUs';
 import PartOfChange from '../components/about/PartOfChange';
+import SubscribeSection from '../components/common/SubscribeSection';
 
 const AboutPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -33,6 +34,7 @@ const AboutPage = () => {
       <Leadership />
       <PartOfChange/>
       <JoinUs />
+      <SubscribeSection/>
       <Footer />
       
       <AuthModal 

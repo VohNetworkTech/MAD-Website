@@ -133,7 +133,7 @@ const OurApproach = () => {
                   <Briefcase className="w-8 h-8 text-green-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Corporates</h4>
-                <p className="text-sm text-gray-600">Employment and CSR partners</p>
+                <p className="text-sm text-gray-600">Employment and skill-development partners</p>
               </div>
               
               <div className="text-center p-4">

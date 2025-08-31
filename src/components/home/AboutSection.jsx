@@ -13,7 +13,7 @@ const AboutSection = () => {
               <p className="text-lg text-gray-600 leading-relaxed">
                 At MAD Foundation, we work towards a future where persons with disabilities have the resources, skills, and opportunities to lead independent and fulfilling lives.              </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-              Our planned initiatives focus on inclusive education, employment, livelihood, assistive technology, healthcare, accessibility, and advocacy to bring meaningful change.              </p>
+              Our planned initiatives focus on higher education, employment, skill-development, assistive technology, healthcare, rehabilitation, accessibility, and advocacy to bring meaningful change.              </p>
               
             </div>
             

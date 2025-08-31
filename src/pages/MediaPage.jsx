@@ -7,7 +7,8 @@ import MediaContent from '../components/media/MediaContent';
 import MediaGalleries from '../components/media/MediaGalleries';
 // import FeaturedMoments from '../components/media/FeaturedMoments';
 import MediaUpload from '../components/media/MediaUpload';
-import MediaContact from '../components/media/MediaContact';
+import GetInTouch from '../components/common/GetInTouch';
+import SubscribeSection from '../components/common/SubscribeSection';
 
 const MediaPage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -30,7 +31,8 @@ const MediaPage = () => {
       <MediaGalleries />
       {/* <FeaturedMoments /> */}
       <MediaUpload />
-      <MediaContact />
+      <GetInTouch/>
+      <SubscribeSection/>
       <Footer />
       
       <AuthModal 

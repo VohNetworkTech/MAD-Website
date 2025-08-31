@@ -5,8 +5,8 @@ const FocusAreas = () => {
   const focusAreas = [
     {
       icon: Users,
-      title: "Inclusive Education",
-      description: "Advancing inclusive education and skill development for persons with disabilities",
+      title: "Higher Education",
+      description: "Advancing higher education and skill development for persons with disabilities",
       color: "blue"
     },
     {

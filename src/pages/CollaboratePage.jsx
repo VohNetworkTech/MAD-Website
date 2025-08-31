@@ -7,7 +7,8 @@ import CollaborateContent from "../components/collaborate/CollaborateContent";
 import CollaborateAreas from "../components/collaborate/CollaborateAreas";
 import CollaborateBenefits from "../components/collaborate/CollaborateBenefits";
 import CollaborateForm from "../components/collaborate/CollaborateForm";
-import CollaborateContact from "../components/collaborate/CollaborateContact";
+import GetInTouch from "../components/common/GetInTouch";
+import SubscribeSection from "../components/common/SubscribeSection";
 
 const CollaboratePage = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -41,7 +42,8 @@ const CollaboratePage = () => {
       
       {/* Partnership Form */}
       <CollaborateForm />
-      <CollaborateContact/>
+      <GetInTouch />
+      <SubscribeSection/>
       {/* Footer */}
       <Footer />
 

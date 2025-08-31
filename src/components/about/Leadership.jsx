@@ -26,7 +26,7 @@ const Leadership = () => {
       color: "purple"
     },
     {
-      name: "Shubham Kumar",
+      name: "Subham Kumar",
       position: "Joint Secretary",
       description: "A committed banking professional and disability rights advocate. Currently serving as an Assistant Manager at Union Bank of India, he brings both administrative experience and grassroots insight to the MAD Foundation.As the Joint Secretary of MAD Foundation, he plays a key role in shaping and supporting the organization’s inclusive initiatives",
       additionalInfo: "In addition to his work with MAD Foundation, Shubham serves as the Chandigarh State Coordinator for the All India Chess Federation for the Blind (AICFB), promoting accessible sports and intellectual development for persons with visual impairments.His multifaceted involvement reflects a strong commitment to empowerment, accessibility, and community engagement.",

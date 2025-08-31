@@ -17,20 +17,7 @@ const NewsContent = () => {
                 At My Action for the Disabled Foundation (MAD Foundation), we are constantly working on new initiatives, organizing events, and expanding our impact. Stay informed about our latest programs, success stories, upcoming events, and important announcements.
               </p>
               
-             
-
-
-              <button
-                onClick={() => {
-                  const formSection = document.getElementById('news-submit');
-                  if (formSection) {
-                    formSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="w-full md:w-auto bg-gradient-to-r from-blue-600 to-indigo-600  text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg"
-              >
-                Subscribe for Updates
-              </button>
+            
             </div>
 
             {/* News Visual */}

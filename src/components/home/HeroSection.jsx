@@ -9,7 +9,7 @@ const HeroSection = () => {
             Empowering Lives, <span className="text-blue-600">Creating Opportunities</span>
           </h1>
           <p className="text-xl text-gray-600  leading-relaxed">
-            My Action for the Disabled Foundation (MAD Foundation) is dedicated to transforming the lives of persons with disabilities by fostering inclusive education, skill development, employment, livelihood, advocacy, and accessibility. We believe in action, empowerment, and creating equal opportunities for all.
+            MAD Foundation (My Action for the Disabled Foundation) is dedicated to transforming the lives of persons with disabilities by advancing education (with a strong focus on higher education), skill development, employment, livelihood, healthcare, assistive technology, accessibility, sports & culture, and overall empowerment. Through action, advocacy, and innovation, we strive to create equal opportunities and enable full participation in every sphere of life.
           </p>
           
         </div>

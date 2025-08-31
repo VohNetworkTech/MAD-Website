@@ -26,7 +26,7 @@ const DonateContent = () => {
               <div className="space-y-4 mb-8">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">Support inclusive education and livelihood opportunities for persons with disabilities.</p>
+                  <p className="text-gray-700">Support education and livelihood opportunities for persons with disabilities.</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
@@ -69,9 +69,9 @@ const DonateContent = () => {
             <div className="space-y-6">
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" 
+                  src="https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756594152873%3A0.26986162556518445.png" 
                   alt="People with disabilities receiving support and assistance"
-                  className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                  className="w-full h-auto object-cover rounded-2xl shadow-lg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl"></div>
               </div>

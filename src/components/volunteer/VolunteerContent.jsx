@@ -15,7 +15,7 @@ const VolunteerContent = () => {
             {/* Text Content */}
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                At My Action for the Disabled Foundation (MAD Foundation), we believe that real change happens when passionate individuals come together to take action. By volunteering with us, you can contribute towards inclusive education, skill development, employment, accessibility, assistive technology, and advocacy for persons with disabilities.
+                At My Action for the Disabled Foundation (MAD Foundation), we believe that real change happens when passionate individuals come together to take action. By volunteering with us, you can contribute towards education, skill development, employment, accessibility, assistive technology and advocacy for persons with disabilities.
               </p>
               
               <p className="text-lg text-gray-700 leading-relaxed">

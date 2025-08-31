@@ -18,7 +18,7 @@ const DonateWays = () => {
     {
       icon: Star,
       title: "Sponsor a Program",
-      description: "Choose a specific initiative—education, livelihood, employment, assistive technology, or advocacy—and sponsor its growth and impact.",
+      description: "Choose a specific initiative—education, livelihood, employment, assistive technology, skill-development or advocacy—and sponsor its growth and impact.",
       color: "purple"
     }
   ];
@@ -33,12 +33,12 @@ const DonateWays = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section className="py-5 bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Ways to Donate</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-600 mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Choose the donation method that works best for you and your commitment to supporting our cause.
             </p>
@@ -71,19 +71,7 @@ const DonateWays = () => {
             })}
           </div>
 
-          <div className="text-center">
-            <button
-              onClick={() => {
-                const formSection = document.getElementById('donate-form');
-                if (formSection) {
-                  formSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg"
-            >
-              Become a Donor
-            </button>
-          </div>
+
         </div>
       </div>
     </section>

@@ -34,28 +34,28 @@ const PartOfChange = () => {
               </p>
               
               <div className="space-y-4">
-                <a href="#" className="flex items-center space-x-4 p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group">
+                <a href="https://www.facebook.com/profile.php?id=61568907583148" className="flex items-center space-x-4 p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group">
                   <Facebook className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform" />
                   <div>
                     <div className="font-semibold text-gray-900">Facebook</div>
                   </div>
                 </a>
                 
-                <a href="#" className="flex items-center space-x-4 p-3 bg-pink-50 rounded-lg hover:bg-pink-100 transition-colors group">
+                <a href="https://www.instagram.com/madfoundation85/" className="flex items-center space-x-4 p-3 bg-pink-50 rounded-lg hover:bg-pink-100 transition-colors group">
                   <Instagram className="w-6 h-6 text-pink-600 group-hover:scale-110 transition-transform" />
                   <div>
                     <div className="font-semibold text-gray-900">Instagram</div>
                   </div>
                 </a>
                 
-                <a href="#" className="flex items-center space-x-4 p-3 bg-red-50 rounded-lg hover:bg-red-100 transition-colors group">
+                <a href="https://www.youtube.com/channel/UCCfkHNrVJVYxdpkM4TPTfjg" className="flex items-center space-x-4 p-3 bg-red-50 rounded-lg hover:bg-red-100 transition-colors group">
                   <Youtube className="w-6 h-6 text-red-600 group-hover:scale-110 transition-transform" />
                   <div>
                     <div className="font-semibold text-gray-900">YouTube</div>
                   </div>
                 </a>
                 
-                <a href="#" className="flex items-center space-x-4 p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group">
+                <a href="https://www.linkedin.com/company/madfoundationorg/" className="flex items-center space-x-4 p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group">
                   <Linkedin className="w-6 h-6 text-blue-700 group-hover:scale-110 transition-transform" />
                   <div>
                     <div className="font-semibold text-gray-900">LinkedIn</div>
