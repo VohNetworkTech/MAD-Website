@@ -15,6 +15,7 @@ import RefundPolicy from './pages/RefundPolicy';
 import TermsConditions from './pages/TermsConditions';
 import ContactPage from './pages/ContactPage';
 import CollaboratePage from './pages/CollaboratePage';
+import EventPage from './pages/EventPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/collaborate" element={<CollaboratePage />} />
+          <Route path="/events&campaigns" element={<EventPage />} />
         </Routes>
       </Router>
     </AuthProvider>

@@ -8,13 +8,14 @@ const Footer = () => {
     { icon: Facebook, name: "Facebook", href: "https://www.facebook.com/profile.php?id=61568907583148", color: "text-blue-400 hover:text-blue-300" },
     { icon: Instagram, name: "Instagram", href: "https://www.instagram.com/madfoundation85", color: "text-pink-400 hover:text-pink-300" },
     { icon: Youtube, name: "YouTube", href: "https://www.youtube.com/channel/UCCfkHNrVJVYxdpkM4TPTfjg", color: "text-red-400 hover:text-red-300" },
-    { icon: Linkedin, name: "LinkedIn", href: "https://www.linkedin.com/company/madfoundationorg/", color: "text-blue-500 hover:text-blue-400" }
+    { icon: Linkedin, name: "LinkedIn", href: "https://www.linkedin.com/company/madfoundationindia/", color: "text-blue-500 hover:text-blue-400" }
   ];
 
   const policyLinks = [
     { name: "Privacy Policy", path: "/privacy-policy" },
     { name: "Terms & Conditions", path: "/terms-conditions" },
     { name: "Refund Policy", path: "/refund-policy" },
+    { name: "Collaborate", path: "/collaborate" }
   ];
 
   return (

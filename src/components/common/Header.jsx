@@ -25,6 +25,8 @@ const Header = ({ openAuthModal }) => {
       window.location.href = '/contact';
     } else if (page === 'collaborate') {
       window.location.href = '/collaborate';
+    } else if (page === 'events&campaigns') {
+      window.location.href = '/events&campaigns';
     }
   };
 
@@ -103,9 +105,9 @@ const Header = ({ openAuthModal }) => {
               <Image className="w-3 h-3 2xl:w-4 2xl:h-4" />
               <span>Gallery</span>
             </button>
-            <button onClick={() => navigateTo('whatsnew')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base">
+            <button onClick={() => navigateTo('events&campaigns')} className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors text-sm 2xl:text-base">
               <Sparkles className="w-3 h-3 2xl:w-4 2xl:h-4" />
-              <span>News</span>
+              <span>Events & Campaigns</span>
             </button>
 
             {/* Separate Volunteer and Intern buttons */}
@@ -234,7 +236,7 @@ const Header = ({ openAuthModal }) => {
               </button>
               <button onClick={() => { navigateTo('whatsnew'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
                 <Sparkles className="w-4 h-4" />
-                <span>What's New</span>
+                <span>Events & Campaigns</span>
               </button>
 
               {/* Separate Mobile Volunteer and Intern */}

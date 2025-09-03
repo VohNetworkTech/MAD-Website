@@ -55,7 +55,7 @@ const PartOfChange = () => {
                   </div>
                 </a>
                 
-                <a href="https://www.linkedin.com/company/madfoundationorg/" className="flex items-center space-x-4 p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group">
+                <a href="https://www.linkedin.com/company/madfoundationindia/" className="flex items-center space-x-4 p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group">
                   <Linkedin className="w-6 h-6 text-blue-700 group-hover:scale-110 transition-transform" />
                   <div>
                     <div className="font-semibold text-gray-900">LinkedIn</div>
