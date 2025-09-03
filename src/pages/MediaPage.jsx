@@ -6,7 +6,7 @@ import MediaHero from '../components/media/MediaHero';
 import MediaContent from '../components/media/MediaContent';
 import MediaGalleries from '../components/media/MediaGalleries';
 // import FeaturedMoments from '../components/media/FeaturedMoments';
-import MediaUpload from '../components/media/MediaUpload';
+// import MediaUpload from '../components/media/MediaUpload';
 import GetInTouch from '../components/common/GetInTouch';
 import SubscribeSection from '../components/common/SubscribeSection';
 
@@ -30,7 +30,7 @@ const MediaPage = () => {
       <MediaContent />
       <MediaGalleries />
       {/* <FeaturedMoments /> */}
-      <MediaUpload />
+      {/* <MediaUpload /> */}
       <GetInTouch/>
       <SubscribeSection/>
       <Footer />
