@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://13.235.37.118:5000/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://mad-foundation.org/api';
 
 // Create axios instance with base configuration
 const api = axios.create({
