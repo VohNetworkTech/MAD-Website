@@ -56,7 +56,7 @@ const UpcomingEvents = () => {
       date: "Saturday, 11th October 2025",
       time: "9:30 AM – 5:30 PM",
       location: "International Purple Fest, Goa",
-      banner: "https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756897516530%3A0.9499948728907168.png",
+      banner: "https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756979575905%3A0.2269979833242728.png",
       description: "MAD Foundation, in collaboration with Radio Udaan, is organizing a Career Guidance Workshop at the prestigious International Purple Fest, Goa. This day-long program is dedicated to empowering persons with disabilities by showcasing diverse career opportunities and offering practical guidance to help them achieve their aspirationsThe workshop will feature interactive sessions led by experts and successful professionals with disabilities, covering career paths in law, civil services, the corporate sector, entrepreneurship, freelancing, and skill-based employment.",
       whyAttend: [
         "Gain valuable insights into diverse professional opportunities",

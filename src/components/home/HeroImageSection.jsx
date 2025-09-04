@@ -6,7 +6,7 @@ const HeroImageSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
-          src= "https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756901442584%3A0.9147638741540076.png" 
+          src= "https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1756980438406%3A0.13166217000093394.png" 
           alt="People with disabilities engaging in various activities, showcasing inclusion and empowerment"
           className="w-full h-full object-cover object-center"
           loading="lazy"
