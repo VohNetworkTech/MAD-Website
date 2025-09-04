@@ -234,7 +234,7 @@ const Header = ({ openAuthModal }) => {
                 <Image className="w-4 h-4" />
                 <span>Gallery</span>
               </button>
-              <button onClick={() => { navigateTo('whatsnew'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
+              <button onClick={() => { navigateTo('events&campaigns'); setIsMenuOpen(false); }} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors text-sm sm:text-base">
                 <Sparkles className="w-4 h-4" />
                 <span>Events & Campaigns</span>
               </button>
