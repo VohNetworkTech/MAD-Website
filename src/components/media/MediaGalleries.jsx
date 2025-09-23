@@ -11,11 +11,8 @@ const MediaGalleries = () => {
     'https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1758608103255%3A0.8347120345606232.jpg',
     'https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1758608138110%3A0.005934231099368192.jpg',
     'https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1758608170575%3A0.8391830935134543.jpg',
-    'https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1758608194426%3A0.8108699437090385.jpg',
     'https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1758608305213%3A0.7006800966888842.jpg',
-    'https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1758608501611%3A0.889455869549622.jpg',
     'https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1758608533623%3A0.17721646916927258.jpg',
-    'https://voh-buckets.s3.ap-south-1.amazonaws.com/stage/1758608557710%3A0.07500575383638619.jpg',
     // Add more image URLs here
   ];
 
