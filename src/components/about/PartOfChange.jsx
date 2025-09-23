@@ -9,8 +9,8 @@ const PartOfChange = () => {
       window.location.href = '/donate';
     } else if (page === 'intern') {
       window.location.href = '/intern';
-    } else if (page === 'partner') {
-      window.location.href = '/collaborate';
+    } else if (page === 'event') {
+      window.location.href = '/events&campaigns';
     }
   };
   return (
@@ -54,12 +54,12 @@ const PartOfChange = () => {
                         </button>
                         
                         <button 
-                          onClick={() => navigateTo('partner')}
+                          onClick={() => navigateTo('event')}
                           className="bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-orange-700 transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
-                          aria-label="Navigate to partnership page"
+                          aria-label="Navigate to event & campaign page"
                         >
                           <Handshake className="w-5 h-5" aria-hidden="true" />
-                          <span>Partner with Us</span>
+                          <span>Events & Campaigns</span>
                         </button>
                       </div>
           </div>

@@ -6,30 +6,36 @@ const Leadership = () => {
   const leaders = [
     {
       name: "Dr. Naveen Nishchal",
-      position: "President",
-      description: "A medical professional dedicated to disability rights and empowerment.",
+      position: "Chairperson",
+      description: "Dr. Naveen Nishchal, a medical professional, serves as the Chairperson of MAD Foundation. With his vision and compassionate leadership, the Foundation continues to design and implement initiatives that advance disability empowerment and create lasting impact.",
       icon: Award,
       color: "blue"
     },
     {
       name: "Runa Arora",
-      position: "General Secretary", 
-      description: "A social activist committed to fostering opportunities for persons with disabilities.",
+      position: "Executive Director", 
+      description: "As Executive Director, Runa Arora provides dynamic leadership to MAD Foundation’s mission and programs. Guided by a strong commitment to social change, she works to expand opportunities for persons with disabilities and ensure that every initiative of the Foundation translates into meaningful progress.",
       icon: Heart,
       color: "pink"
     },
     {
       name: "Sara Chawla",
-      position: "Joint Secretary",
-      description: "A legal expert working on disability rights and policy inclusion.",
+      position: "Chief Program and Strategy Officer",
+      description: "Sara Chawla serves as the Chief Program and Strategy Officer, where she guides the Foundation’s program development and long-term strategy. With her legal expertise and passion for equity, she ensures that every initiative aligns with the Foundation’s mission, advancing opportunities and creating meaningful impact for persons with disabilities.",
+      icon: Users,
+      color: "purple"
+    },
+    {
+      name: "Garima Narula",
+      position: "Director, Communication and Community Outreach",
+      description: "Garima Narula serves as the Director of Communication and Community Outreach at MAD Foundation. She leads the Foundation’s efforts to amplify its mission, build meaningful partnerships, and connect with diverse communities. With her strong communication skills and commitment to inclusion, Garima works to ensure that the voices and aspirations of persons with disabilities are heard, respected, and acted upon. Through her role, she fosters awareness, engagement, and collaboration that strengthen the impact of the Foundation’s initiatives.",
       icon: Users,
       color: "purple"
     },
     {
       name: "Subham Kumar",
-      position: "Joint Secretary",
-      description: "A committed banking professional and disability rights advocate. Currently serving as an Assistant Manager at Union Bank of India, he brings both administrative experience and grassroots insight to the MAD Foundation.As the Joint Secretary of MAD Foundation, he plays a key role in shaping and supporting the organization’s inclusive initiatives",
-      additionalInfo: "In addition to his work with MAD Foundation, Shubham serves as the Chandigarh State Coordinator for the All India Chess Federation for the Blind (AICFB), promoting accessible sports and intellectual development for persons with visual impairments.His multifaceted involvement reflects a strong commitment to empowerment, accessibility, and community engagement.",
+      position: "Director, Sports and Inclusion",
+      description: "As Director of Sports and Inclusion at MAD Foundation, Subham Kumar champions the use of sports as a catalyst for empowerment. He works to build accessible pathways that enable persons with disabilities to participate, compete, and thrive, fostering inclusion through the spirit of sport",
       icon: User,
       color: "green"
     }
