@@ -1,6 +1,6 @@
 // src/components/about/Leadership.jsx
 import React from 'react';
-import { User, Award, Heart, Users } from 'lucide-react';
+import { User, Award, Heart, Users, Info } from 'lucide-react';
 
 const Leadership = () => {
   const leaders = [
@@ -14,28 +14,28 @@ const Leadership = () => {
     {
       name: "Runa Arora",
       position: "Executive Director", 
-      description: "As Executive Director, Runa Arora provides dynamic leadership to MAD Foundation’s mission and programs. Guided by a strong commitment to social change, she works to expand opportunities for persons with disabilities and ensure that every initiative of the Foundation translates into meaningful progress.",
+      description: "As Executive Director, Runa Arora provides dynamic leadership to MAD Foundation's mission and programs. Guided by a strong commitment to social change, she works to expand opportunities for persons with disabilities and ensure that every initiative of the Foundation translates into meaningful progress.",
       icon: Heart,
       color: "pink"
     },
     {
       name: "Sara Chawla",
       position: "Chief Program and Strategy Officer",
-      description: "Sara Chawla serves as the Chief Program and Strategy Officer, where she guides the Foundation’s program development and long-term strategy. With her legal expertise and passion for equity, she ensures that every initiative aligns with the Foundation’s mission, advancing opportunities and creating meaningful impact for persons with disabilities.",
+      description: "Sara Chawla serves as the Chief Program and Strategy Officer, where she guides the Foundation's program development and long-term strategy. With her legal expertise and passion for equity, she ensures that every initiative aligns with the Foundation's mission, advancing opportunities and creating meaningful impact for persons with disabilities.",
       icon: Users,
       color: "purple"
     },
     {
       name: "Garima Narula",
       position: "Director, Communication and Community Outreach",
-      description: "Garima Narula serves as the Director of Communication and Community Outreach at MAD Foundation. She leads the Foundation’s efforts to amplify its mission, build meaningful partnerships, and connect with diverse communities. With her strong communication skills and commitment to inclusion, Garima works to ensure that the voices and aspirations of persons with disabilities are heard, respected, and acted upon. Through her role, she fosters awareness, engagement, and collaboration that strengthen the impact of the Foundation’s initiatives.",
+      description: "Garima Narula serves as the Director of Communication and Community Outreach at MAD Foundation. She leads the Foundation's efforts to amplify its mission, build meaningful partnerships, and connect with diverse communities. With her strong communication skills and commitment to inclusion, Garima works to ensure that the voices and aspirations of persons with disabilities are heard, respected, and acted upon. Through her role, she fosters awareness, engagement, and collaboration that strengthen the impact of the Foundation's initiatives.",
       icon: Users,
       color: "purple"
     },
     {
       name: "Subham Kumar",
       position: "Director, Sports and Inclusion",
-      description: "As Director of Sports and Inclusion at MAD Foundation, Subham Kumar champions the use of sports as a catalyst for empowerment. He works to build accessible pathways that enable persons with disabilities to participate, compete, and thrive, fostering inclusion through the spirit of sport",
+      description: "As Director of Sports and Inclusion at MAD Foundation, Subham Kumar champions the use of sports as a catalyst for empowerment. He works to build accessible pathways that enable persons with disabilities to participate, compete, and thrive, fostering inclusion through the spirit of sport",
       icon: User,
       color: "green"
     }
@@ -89,7 +89,7 @@ const Leadership = () => {
           </div>
 
           {/* Leadership Cards */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             {leaders.map((leader, index) => {
               const IconComponent = leader.icon;
               const colors = getColorClasses(leader.color);
@@ -136,7 +136,23 @@ const Leadership = () => {
             })}
           </div>
 
-          
+          {/* Honorary Note */}
+          <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-8 border-2 border-indigo-200 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-100 rounded-full -mr-12 -mt-12 opacity-50"></div>
+            
+            <div className="flex items-start space-x-4 relative z-10">
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Info className="w-6 h-6 text-white" />
+              </div>
+              
+              <div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Important Note</h4>
+                <p className="text-gray-700 leading-relaxed">
+                  <strong>All positions at the MAD Foundation (My Action for the Disabled Foundation) are purely honorary in nature.</strong> Each member of the leadership team serves in a voluntary capacity, contributing their time, expertise, and commitment to the mission of empowering persons with disabilities.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
