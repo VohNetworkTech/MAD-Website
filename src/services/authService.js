@@ -1,3 +1,4 @@
+// src/services/authService.js
 import api from '../utils/api';
 
 class AuthService {
@@ -13,10 +14,17 @@ class AuthService {
       
       if (response.data.token) {
         localStorage.setItem('authToken', response.data.token);
-        localStorage.setItem('user', JSON.stringify(response.data));
+        // Store complete user data including role
+        localStorage.setItem('user', JSON.stringify({
+          ...response.data.user,
+          token: response.data.token
+        }));
       }
       
-      return response.data;
+      return {
+        ...response.data.user,
+        token: response.data.token
+      };
     } catch (error) {
       throw this.handleError(error);
     }
@@ -26,18 +34,50 @@ class AuthService {
   async signin(credentials) {
     try {
       const response = await api.post('/auth/login', {
-        email: credentials.username, // Assuming username can be email
+        email: credentials.username,
         password: credentials.password,
       });
       
       if (response.data.token) {
         localStorage.setItem('authToken', response.data.token);
-        localStorage.setItem('user', JSON.stringify(response.data));
+        // Store complete user data including role
+        localStorage.setItem('user', JSON.stringify({
+          ...response.data.user,
+          token: response.data.token
+        }));
       }
       
-      return response.data;
+      return {
+        ...response.data.user,
+        token: response.data.token
+      };
     } catch (error) {
       throw this.handleError(error);
+    }
+  }
+
+  // Verify token and get current user from backend
+  async verifyToken() {
+    try {
+      const token = localStorage.getItem('authToken');
+      if (!token) return null;
+
+      const response = await api.get('/auth/verify');
+      
+      // Update stored user data
+      localStorage.setItem('user', JSON.stringify({
+        ...response.data.user,
+        token
+      }));
+      
+      return {
+        ...response.data.user,
+        token
+      };
+    } catch (error) {
+      // If token is invalid, clear storage
+      this.logout();
+      return null;
     }
   }
 
@@ -68,17 +108,23 @@ class AuthService {
     return !!localStorage.getItem('authToken');
   }
 
+  // Check user role
+  hasRole(requiredRole) {
+    const user = this.getCurrentUser();
+    return user?.role === requiredRole;
+  }
+
   // Handle API errors
   handleError(error) {
     const message = error.response?.data?.message || 
                    error.message || 
                    'An unexpected error occurred';
     
-    return {
-      message,
-      status: error.response?.status,
-      data: error.response?.data,
-    };
+    const err = new Error(message);
+    err.status = error.response?.status;
+    err.data = error.response?.data;
+    
+    return err;
   }
 }
 

@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './hooks/useAuth';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -16,7 +16,8 @@ import TermsConditions from './pages/TermsConditions';
 import ContactPage from './pages/ContactPage';
 import CollaboratePage from './pages/CollaboratePage';
 import EventPage from './pages/EventPage';
-
+import AdminPage from './pages/AdminPage';
+import ProtectedRoute from './hooks/ProtectedRoute';
 function App() {
   return (
     <AuthProvider>
@@ -36,6 +37,15 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/collaborate" element={<CollaboratePage />} />
           <Route path="/events&campaigns" element={<EventPage />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AdminPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </AuthProvider>

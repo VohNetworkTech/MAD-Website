@@ -1,3 +1,4 @@
+// src/hooks/useAuth.jsx
 import { useState, useContext, createContext, useEffect } from 'react';
 import authService from '../services/authService';
 
@@ -15,10 +16,26 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Load and verify user on mount
   useEffect(() => {
-    const currentUser = authService.getCurrentUser();
-    setUser(currentUser);
-    setLoading(false);
+    const initAuth = async () => {
+      try {
+        const currentUser = authService.getCurrentUser();
+        
+        if (currentUser) {
+          // Verify token is still valid
+          const verifiedUser = await authService.verifyToken();
+          setUser(verifiedUser);
+        }
+      } catch (error) {
+        console.error('Auth initialization failed:', error);
+        authService.logout();
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    initAuth();
   }, []);
 
   const login = async (credentials) => {
@@ -52,7 +69,9 @@ export const AuthProvider = ({ children }) => {
     signup,
     logout,
     loading,
-    isAuthenticated: authService.isAuthenticated(),
+    isAuthenticated: !!user,
+    role: user?.role || null,
+    hasRole: (requiredRole) => user?.role === requiredRole
   };
 
   return (

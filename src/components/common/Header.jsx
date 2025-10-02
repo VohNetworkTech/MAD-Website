@@ -1,14 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Menu, X, User, UserPlus, Users, Briefcase, Heart, Image, Sparkles, Phone, Handshake, Home, Info, Target, LogOut, Settings, ChevronDown } from 'lucide-react';
-
+import { Menu, X, User, UserPlus, Users, Briefcase, Heart, Image, Sparkles, Phone, Handshake, Home, Info, Target, LogOut, Settings, ChevronDown,Shield } from 'lucide-react';
+import { useAuth } from '../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 const Header = ({ openAuthModal }) => {
   // Mock auth hook for demo - replace with your actual useAuth hook
-  const useAuth = () => ({
-    user: null,
-    logout: () => {},
-    isAuthenticated: false
-  });
   
+  const navigate = useNavigate();
   const { user, logout, isAuthenticated } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -38,38 +35,42 @@ const Header = ({ openAuthModal }) => {
 
   const navigateTo = (page) => {
     if (page === 'home') {
-      window.location.href = '/';
+      navigate('/');
     } else if (page === 'about') {
-      window.location.href = '/about';
+      navigate('/about');
     } else if (page === 'projects') {
-      window.location.href = '/projects';
+      navigate('/projects');
     } else if (page === 'donate') {
-      window.location.href = '/donate';
+      navigate('/donate');
     } else if (page === 'gallery') {
-      window.location.href = '/gallery-page';
+      navigate('/gallery-page');
     } else if (page === 'whatsnew') {
-      window.location.href = '/what-new';
+      navigate('/what-new');
     } else if (page === 'contact') {
-      window.location.href = '/contact';
+      navigate('/contact');
     } else if (page === 'collaborate') {
-      window.location.href = '/collaborate';
+      navigate('/collaborate');
     } else if (page === 'events&campaigns') {
-      window.location.href = '/events&campaigns';
+      navigate('/events&campaigns');
+    } else if (page === 'admin') {
+      navigate('/admin');
     }
   };
 
   const handleJoinUsClick = (type) => {
     if (type === 'volunteer') {
-      window.location.href = '/volunteer';
+      navigate('/volunteer');
     } else if (type === 'intern') {
-      window.location.href = '/intern';
+      navigate('/intern');
     }
   };
 
+ 
   const handleLogout = () => {
     logout();
     setIsUserMenuOpen(false);
     setIsMenuOpen(false);
+     navigate('/');
   };
 
   // Get user's first name or username
@@ -82,9 +83,35 @@ const Header = ({ openAuthModal }) => {
   const UserDropdown = ({ isMobile = false }) => (
     <div className={`${isMobile ? 'relative' : 'absolute right-0 mt-2'} w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50`}>
       <div className="px-4 py-3 border-b border-gray-100">
-        <p className="text-sm text-gray-500 truncate">{user?.email}</p>
+        <p className="text-sm font-medium text-gray-900">{user?.name}</p>
+        <p className="text-xs text-gray-500 truncate">{user?.email}</p>
+        {user?.role === 'admin' && (
+          <span className="inline-block mt-1 px-2 py-0.5 text-xs font-semibold bg-purple-100 text-purple-800 rounded-full">
+            Admin
+          </span>
+        )}
       </div>
       <div className="py-1">
+        {/* Show Admin Dashboard link for admin users */}
+        {user?.role === 'admin' && (
+          <button
+            onClick={() => { navigateTo('admin'); setIsUserMenuOpen(false); }}
+            className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 flex items-center space-x-2"
+          >
+            <Shield className="w-4 h-4" />
+            <span>Admin Dashboard</span>
+          </button>
+        )}
+        <button
+          onClick={() => { 
+            console.log('Navigate to profile');
+            setIsUserMenuOpen(false);
+          }}
+          className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center space-x-2"
+        >
+          <Settings className="w-4 h-4" />
+          <span>Profile Settings</span>
+        </button>
         <button
           onClick={handleLogout}
           className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center space-x-2"
@@ -95,7 +122,6 @@ const Header = ({ openAuthModal }) => {
       </div>
     </div>
   );
-
   return (
     <header className="bg-white shadow-md sticky top-0 z-50" role="banner">
       <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 lg:py-6">
@@ -377,8 +403,25 @@ const Header = ({ openAuthModal }) => {
                       <div>
                         <p className="text-sm font-medium text-gray-900">{user?.name || 'User'}</p>
                         <p className="text-xs text-gray-500 truncate">{user?.email}</p>
+                        {user?.role === 'admin' && (
+                          <span className="inline-block mt-0.5 px-2 py-0.5 text-xs font-medium bg-purple-100 text-purple-800 rounded">
+                            Admin
+                          </span>
+                        )}
                       </div>
                     </div>
+                      {user?.role === 'admin' && (
+                      <button
+                        onClick={() => {
+                          navigateTo('admin');
+                          setIsMenuOpen(false);
+                        }}
+                        className="w-full flex items-center space-x-2 px-3 sm:px-4 py-2 text-purple-600 bg-white rounded-lg hover:bg-purple-50 text-sm"
+                      >
+                        <Shield className="w-4 h-4" />
+                        <span>Admin Dashboard</span>
+                      </button>
+                    )}
                     
                     <button
                       onClick={() => {

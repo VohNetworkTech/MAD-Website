@@ -1,5 +1,9 @@
+// src/components/common/AuthModal.jsx
+// Only the handleSubmit function needs updating - rest stays the same
+
 import React, { useState } from 'react';
 import { X, User, Mail, Phone, Lock, Eye, EyeOff, AlertCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import {
   validateEmail,
@@ -9,7 +13,7 @@ import {
   validateConfirmPassword,
 } from '../../utils/validation';
 
-// Move InputField outside the main component to prevent recreation on every render
+// InputField component stays exactly the same
 const InputField = ({ 
   icon: Icon, 
   type, 
@@ -60,7 +64,8 @@ const InputField = ({
 );
 
 const AuthModal = ({ isOpen, onClose, mode, setMode }) => {
-  const { login, signup } = useAuth();
+  const { login, signup, user } = useAuth();
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
@@ -90,7 +95,6 @@ const AuthModal = ({ isOpen, onClose, mode, setMode }) => {
       newErrors.password = validatePassword(formData.password);
     }
     
-    // Remove null/undefined errors
     Object.keys(newErrors).forEach(key => {
       if (!newErrors[key]) delete newErrors[key];
     });
@@ -99,6 +103,7 @@ const AuthModal = ({ isOpen, onClose, mode, setMode }) => {
     return Object.keys(newErrors).length === 0;
   };
 
+  // UPDATED handleSubmit with role-based navigation
   const handleSubmit = async (e) => {
     e.preventDefault();
     setApiError('');
@@ -108,16 +113,18 @@ const AuthModal = ({ isOpen, onClose, mode, setMode }) => {
     setIsSubmitting(true);
     
     try {
+      let userData;
+      
       if (mode === 'register') {
-        await signup(formData);
+        userData = await signup(formData);
       } else {
-        await login({
+        userData = await login({
           username: formData.username,
           password: formData.password,
         });
       }
       
-      // Reset form and close modal on success
+      // Reset form
       setFormData({
         username: '',
         email: '',
@@ -128,6 +135,13 @@ const AuthModal = ({ isOpen, onClose, mode, setMode }) => {
       });
       setErrors({});
       onClose();
+      
+      // Navigate based on role
+      if (userData?.role === 'admin') {
+        navigate('/admin');
+      } else {
+        navigate('/');
+      }
       
     } catch (error) {
       setApiError(error.message || 'Something went wrong. Please try again.');
@@ -140,12 +154,10 @@ const AuthModal = ({ isOpen, onClose, mode, setMode }) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    // Clear specific error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
     
-    // Clear API error when user makes changes
     if (apiError) {
       setApiError('');
     }
@@ -200,7 +212,6 @@ const AuthModal = ({ isOpen, onClose, mode, setMode }) => {
         {/* Form */}
         <div className="p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* API Error Display */}
             {apiError && (
               <div className="bg-red-50 border border-red-200 rounded-lg p-3">
                 <div className="flex items-center">
@@ -294,21 +305,6 @@ const AuthModal = ({ isOpen, onClose, mode, setMode }) => {
                 <span>{mode === 'signin' ? 'Sign In' : 'Create Account'}</span>
               )}
             </button>
-
-            {/* {mode === 'signin' && (
-              <div className="text-center">
-                <button
-                  type="button"
-                  className="text-blue-600 hover:text-blue-700 text-sm transition-colors"
-                  onClick={() => {
-                    // Handle forgot password
-                    console.log('Forgot password clicked');
-                  }}
-                >
-                  Forgot Password?
-                </button>
-              </div>
-            )} */}
 
             <div className="text-center pt-4 border-t border-gray-200">
               <p className="text-gray-600">
